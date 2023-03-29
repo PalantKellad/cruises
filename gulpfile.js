@@ -39,7 +39,7 @@ const refresh = (done) => {
   done();
 };
 
-const build = gulp.series(clean, copy, sprite, gulp.parallel(styles, js, optimizePng, optimizeJpg, optimizeSvg));
+const build = gulp.series(clean, copy, sprite, optimizeSvg, gulp.parallel(styles, js, optimizePng, optimizeJpg));
 const dev = gulp.series(clean, copy, sprite, gulp.parallel(styles, js, optimizePng, optimizeJpg, optimizeSvg), syncServer);
 const start = gulp.series(clean, copy, sprite, gulp.parallel(styles, js), syncServer);
 
