@@ -1,5 +1,9 @@
 .page {
   min-width: 320px;
-  font: 400 16px/24px var(--main-font);
+  font: 400 16px / 24px var(--main-font);
   color: var(--themed-dark);
+}
+
+.page__header {
+  padding-top: 35px;
 }

@@ -1,0 +1,23 @@
+.main-header {
+  min-height: 650px;
+  color: var(--base-light);
+  background: url("../img/hero-big.webp") no-repeat var(--themed-dark) center / cover;
+}
+
+.main-header__description {
+  padding: 210px 95px 50px;
+}
+
+.main-header h1 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font: 700 54px / 66px var(--main-font);
+  text-shadow: var(--heading-shadow);
+}
+
+.main-header p {
+  margin: 0;
+  margin-bottom: 20px;
+  font: 400 24px / 20px var(--main-font);
+  text-shadow: var(--heading-shadow);
+}

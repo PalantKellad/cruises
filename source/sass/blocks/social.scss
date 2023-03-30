@@ -1,0 +1,12 @@
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+  gap: 27px;
+}
+
+.social__link {
+  display: grid;
+  place-items: center;
+  padding: 5px;
+}

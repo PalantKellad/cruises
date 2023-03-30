@@ -1,0 +1,13 @@
+.logo {
+  display: grid;
+  place-content: center;
+  width: 70px;
+  height: 38px;
+  color: var(--base-light);
+}
+
+.logo__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}

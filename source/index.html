@@ -13,38 +13,44 @@
 <body>
   <div class="page wrapper">
     <header class="page__header main-header">
-      <nav class="main-header__navigation">
-        <a class="main-header__logo logo" href="./">
-          <img class="logo__image" src="./img/logo.svg" alt="Логотип компании Круизы в Антарктику.">
-        </a>
-        <ul class="main-header__menu main-menu reset-list">
-          <li class="main-menu__item">
-            <a class="main-menu__link" href="#advantages">Преимущества</a>
-          </li>
-          <li class="main-menu__item">
-            <a class="main-menu__link" href="routes.html">Направления</a>
-          </li>
-          <li class="main-menu__item">
-            <a class="main-menu__link" href="#upcoming-cruises">Ближайшие круизы</a>
-          </li>
-          <li class="main-menu__item">
-            <a class="main-menu__link" href="#contacts">Контакты</a>
-          </li>
-        </ul>
-        <button class="main-navigation__toggle toggle toggle--no-js" type="button">
-          <span class="visually-hidden">Открыть меню</span>
-          <span class="toggle__button"></span>
-        </button>
-        <h1>Круизы в&nbsp;Антарктику</h1>
-        <p>Волшебный мир айсбергов и&nbsp;пингвинов</p>
-      </nav>
-
-      <footer class="main-footer">
+      <div class="container">
+        <nav class="main-header__navigation main-navigation">
+          <a class="main-navigation__logo logo" href="./">
+            <img class="logo__image" src="./img/svg/logo.svg" alt="Логотип компании Круизы в Антарктику.">
+          </a>
+          <ul class="main-navigation__menu main-menu reset-list">
+            <li class="main-menu__item">
+              <a class="main-menu__link" href="#advantages">Преимущества</a>
+            </li>
+            <li class="main-menu__item">
+              <a class="main-menu__link" href="routes.html">Направления</a>
+            </li>
+            <li class="main-menu__item">
+              <a class="main-menu__link" href="#upcoming-cruises">Ближайшие круизы</a>
+            </li>
+            <li class="main-menu__item">
+              <a class="main-menu__link" href="#contacts">Контакты</a>
+            </li>
+          </ul>
+          <button class="main-navigation__toggle toggle toggle--no-js" type="button">
+            <span class="visually-hidden">Открыть меню</span>
+            <span class="toggle__button"></span>
+          </button>
+        </nav>
+        <div class="main-header__description">
+          <h1>Круизы в&nbsp;Антарктику</h1>
+          <p>Волшебный мир айсбергов и&nbsp;пингвинов</p>
+        </div>
+      </div>
+    </header>
+    <main></main>
+    <footer class="main-footer">
+      <div class="container">
         <nav class="main-footer__navigation">
           <a class="main-footer__logo logo" href="./">
-            <img class="logo__image" src="./img/logo.svg" alt="Логотип компании Круизы в Антарктику.">
+            <img class="logo__image" src="./img/svg/logo.svg" alt="Логотип компании Круизы в Антарктику.">
           </a>
-          <ul class="main-footer__menu main-menu main-menu--footer reset-list">
+          <ul class="main-footer__menu main-menu reset-list">
             <li class="main-menu__item">
               <a class="main-menu__link" href="#advantages">Преимущества</a>
             </li>
@@ -84,9 +90,9 @@
               </a>
             </li>
           </ul>
-      </footer>
-
-    </header>
+        </nav>
+      </div>
+    </footer>
   </div>
   <script src="js/vendor.min.js"></script>
   <script src="js/main.min.js"></script>

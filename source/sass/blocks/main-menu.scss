@@ -1,0 +1,12 @@
+.main-menu {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 33px;
+  row-gap: 25px;
+  align-items: center;
+}
+
+.main-menu__link {
+  font: 500 16px / 20px var(--main-font);
+  color: var(--base-light);
+}

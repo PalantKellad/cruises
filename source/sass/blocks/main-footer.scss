@@ -1,0 +1,27 @@
+.main-footer {
+  background-color: var(--themed-dark);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.main-footer__navigation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.main-footer__logo {
+  margin-right: 5%;
+}
+
+.main-footer__menu {
+  max-width: 65%;
+  margin: 0;
+  margin-right: 30px;
+}
+
+.main-footer__social {
+  max-width: 15%;
+  margin: 0;
+  margin-left: auto;
+}

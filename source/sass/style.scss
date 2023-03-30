@@ -14,11 +14,19 @@
 @import "global/reboot";
 @import "global/utils";
 @import "global/container";
+@import "global/reset-list";
 
 // Blocks
 // ---------------------------------
 
 @import "blocks/modal";
+@import "blocks/page";
+@import "blocks/main-header";
+@import "blocks/main-navigation";
+@import "blocks/logo";
+@import "blocks/main-menu";
+@import "blocks/main-footer";
+@import "blocks/social";
 
 // ---------------------------------
 
