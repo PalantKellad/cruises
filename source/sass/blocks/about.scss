@@ -1,0 +1,41 @@
+.about {
+  display: grid;
+  grid-template-columns: 45% 48%;
+  column-gap: 7%;
+  padding-top: 118px;
+  padding-bottom: 166px;
+
+  @include vp-1023 {
+    grid-template-columns: 48% 48%;
+    column-gap: 4%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.about__description {
+  padding-top: 56px;
+
+  @include vp-1023 {
+    margin-top: -9px;
+    padding-top: 0;
+  }
+
+  & h2 {
+    margin: 0;
+    margin-bottom: 25px;
+    font: 600 28px / 1.5 var(--main-font);
+
+      @include vp-1023 {
+        margin-bottom: 16px;
+        padding-right: 24px;
+        font: 600 26px / 1.4 var(--main-font);
+      }
+  }
+
+  & p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font: 400 16px / 1.5 var(--main-font);
+  }
+}

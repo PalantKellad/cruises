@@ -12,23 +12,27 @@
 
 <body>
   <div class="page wrapper">
-    <header class="page__header main-header">
+    <header class="page__header main-header" style="
+          --header-bg-big-url: url(../img/hero-big.webp);
+          --header-bg-medium-url: url(../img/hero-medium.webp);
+          --header-bg-small-url: url(../img/hero-small.webp);
+          ">
       <div class="container">
         <nav class="main-header__navigation main-navigation">
           <a class="main-navigation__logo logo" href="./">
-            <img class="logo__image" src="./img/svg/logo.svg" alt="Логотип компании Круизы в Антарктику.">
+            <img class="logo__image" src="./img/svg/logo.svg" width="70" height="38" alt="Логотип компании Круизы в Антарктику.">
           </a>
           <ul class="main-navigation__menu main-menu reset-list">
-            <li class="main-menu__item">
+            <li>
               <a class="main-menu__link" href="#advantages">Преимущества</a>
             </li>
-            <li class="main-menu__item">
+            <li>
               <a class="main-menu__link" href="routes.html">Направления</a>
             </li>
-            <li class="main-menu__item">
+            <li>
               <a class="main-menu__link" href="#upcoming-cruises">Ближайшие круизы</a>
             </li>
-            <li class="main-menu__item">
+            <li>
               <a class="main-menu__link" href="#contacts">Контакты</a>
             </li>
           </ul>
@@ -43,25 +47,42 @@
         </div>
       </div>
     </header>
-    <main></main>
+    <main>
+      <section>
+        <div class="container about">
+          <div class="about__description">
+            <h2>Путешествие на&nbsp;край Земли</h2>
+            <p>Это волшебное путешествие поможет вам познакомиться поближе с&nbsp;удивительным миром Антарктики. Наш круизный лайнер отвезет вас на&nbsp;край Земли, где вы&nbsp;сможете увидеть: ледяные айсберги, несколько видов пингвинов, китов, морских котиков и&nbsp;многое другое.</p>
+          </div>
+          <div class="about__picture">
+            <picture>
+              <source type="image/webp" media="(min-width: 1024px)" srcset="img/pinguins-big.webp 1x, img/pinguins-big@2x.webp 2x" width="560" height="301">
+              <source type="image/webp" media="(max-width: 1023px)" srcset="img/pinguins-medium.webp 1x, img/pinguins-medium@2x.webp 2x" width="324" height="174">
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/pinguins-small.webp 1x, img/pinguins-small@2x.webp 2x" width="290" height="156">
+              <img class="image" src="img/pinguins-big.webp" width="560" height="301" alt="Три пингвина стоят на снежном склоне и смотрят в кадр.">
+            </picture>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer class="main-footer">
       <div class="container">
         <nav class="main-footer__navigation">
           <a class="main-footer__logo logo" href="./">
-            <img class="logo__image" src="./img/svg/logo.svg" alt="Логотип компании Круизы в Антарктику.">
+            <img class="logo__image" src="./img/svg/logo.svg" width="70" height="38" alt="Логотип компании Круизы в Антарктику.">
           </a>
-          <ul class="main-footer__menu main-menu reset-list">
-            <li class="main-menu__item">
-              <a class="main-menu__link" href="#advantages">Преимущества</a>
+          <ul class="main-footer__menu main-menu main-menu reset-list">
+            <li>
+              <a class="main-menu__link main-menu__link--footer" href="#advantages">Преимущества</a>
             </li>
-            <li class="main-menu__item">
-              <a class="main-menu__link" href="routes.html">Направления</a>
+            <li>
+              <a class="main-menu__link main-menu__link--footer" href="routes.html">Направления</a>
             </li>
-            <li class="main-menu__item">
-              <a class="main-menu__link" href="#upcoming-cruises">Ближайшие круизы</a>
+            <li>
+              <a class="main-menu__link main-menu__link--footer" href="#upcoming-cruises">Ближайшие круизы</a>
             </li>
-            <li class="main-menu__item">
-              <a class="main-menu__link" href="#contacts">Контакты</a>
+            <li>
+              <a class="main-menu__link main-menu__link--footer" href="#contacts">Контакты</a>
             </li>
           </ul>
           <ul class="main-footer__social social reset-list">

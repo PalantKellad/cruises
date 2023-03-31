@@ -2,6 +2,11 @@
   background-color: var(--themed-dark);
   padding-top: 50px;
   padding-bottom: 50px;
+
+  @include vp-1023 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
 }
 
 .main-footer__navigation {
@@ -11,7 +16,7 @@
 }
 
 .main-footer__logo {
-  margin-right: 5%;
+  margin-right: 4%;
 }
 
 .main-footer__menu {

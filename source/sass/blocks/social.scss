@@ -3,10 +3,18 @@
   flex-wrap: wrap;
   align-content: start;
   gap: 27px;
+
+  @include vp-1023 {
+    gap: 23px;
+  }
 }
 
 .social__link {
   display: grid;
   place-items: center;
   padding: 5px;
+
+  @include vp-1023 {
+    max-width: 16px;
+  }
 }

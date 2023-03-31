@@ -1,9 +1,15 @@
 .logo {
   display: grid;
   place-content: center;
-  width: 70px;
-  height: 38px;
   color: var(--base-light);
+
+  @include vp-1023 {
+    max-width: 38px;
+  }
+
+  @include vp-767 {
+    max-width: 42px;
+  }
 }
 
 .logo__image {
