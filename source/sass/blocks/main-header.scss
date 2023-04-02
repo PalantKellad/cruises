@@ -1,15 +1,16 @@
 .main-header {
   --bg-url: var(--header-bg-big-url);
 
-  min-height: 646px;
+  min-height: 650px;
   color: var(--base-light);
   background: var(--bg-url) no-repeat var(--themed-dark) center / cover;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: var(--heading-shadow);
 
   @include vp-1023 {
     --bg-url: var(--header-bg-medium-url);
 
     min-height: 638px;
+    filter: initial;
   }
 
   @include vp-767 {
@@ -17,45 +18,65 @@
 
     min-height: 500px;
   }
-}
 
-.main-header__description {
-  padding: 184px 95px 50px;
-
-  @include vp-1023 {
-    padding: 200px 0 50px;
-  }
-}
-
-.main-header {
   & h1 {
-    margin-top: 13px;
+    margin-top: 0;
     margin-bottom: 13px;
-    font: 700 54px / 66px var(--main-font);
+    font: 700 54px / 66px $ff-montserrat;
     text-shadow: var(--heading-shadow);
 
     @include vp-1023 {
-      font: 700 50px / 61px var(--main-font);
+      font: 700 50px / 61px $ff-montserrat;
+      text-shadow: initial;
     }
 
-    @include vp-1023 {
-      font: 700 36px / 1.25 var(--main-font);
+    @include vp-767 {
+      font: 700 36px / 1.25 $ff-montserrat;
     }
   }
 
   & p {
     margin: 0;
     margin-bottom: 20px;
-    font: 400 20px / 1.2 var(--main-font);
+    font: 400 20px / 1.2 $ff-montserrat;
     text-shadow: var(--heading-shadow);
 
     @include vp-1023 {
-      font: 400 18px / 22px var(--main-font);
+      font: 400 18px / 22px $ff-montserrat;
+      text-shadow: initial;
     }
 
     @include vp-767 {
-      font: 400 16px / 1.4 var(--main-font);
+      max-width: 21ch;
+      font: 400 16px / 1.4 $ff-montserrat;
     }
   }
 }
 
+.main-header__navigation {
+  &--is-open {
+    @include vp-767 {
+      position: absolute;
+      z-index: 1000;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      min-width: 285px;
+      height: 100%;
+      overflow-y: auto;
+      background-color: var(--base-light);
+    }
+  }
+}
+
+.main-header__description {
+  padding: 197px 95px 50px;
+
+  @include vp-1023 {
+    padding: 216px 0 50px;
+  }
+
+  @include vp-767 {
+    padding-top: 126px;
+  }
+}

@@ -1,15 +1,20 @@
 .about {
   display: grid;
-  grid-template-columns: 45% 48%;
-  column-gap: 7%;
-  padding-top: 118px;
+  grid-template-columns: 45% 48.3%;
+  column-gap: 6.7%;
+  padding-top: 120px;
   padding-bottom: 166px;
 
   @include vp-1023 {
     grid-template-columns: 48% 48%;
     column-gap: 4%;
-    padding-top: 100px;
+    padding-top: 91px;
     padding-bottom: 100px;
+  }
+
+  @include vp-767 {
+    display: block;
+    padding-top: 56px;
   }
 }
 
@@ -17,25 +22,38 @@
   padding-top: 56px;
 
   @include vp-1023 {
-    margin-top: -9px;
     padding-top: 0;
   }
 
   & h2 {
     margin: 0;
     margin-bottom: 25px;
-    font: 600 28px / 1.5 var(--main-font);
+    font: 600 28px / 1.5 $ff-montserrat;
 
-      @include vp-1023 {
-        margin-bottom: 16px;
-        padding-right: 24px;
-        font: 600 26px / 1.4 var(--main-font);
-      }
+    @include vp-1023 {
+      margin-bottom: 16px;
+      padding-right: 24px;
+      font: 600 26px / 1.4 $ff-montserrat;
+    }
+
+    @include vp-767 {
+      font: 600 24px / 1.4 $ff-montserrat;
+    }
   }
 
   & p {
-    margin-top: 10px;
+    margin-top: 0;
     margin-bottom: 10px;
-    font: 400 16px / 1.5 var(--main-font);
+    font: 400 16px / 1.5 $ff-montserrat;
+  }
+}
+
+.about__picture {
+  @include vp-1023 {
+    padding-top: 9px;
+  }
+
+  @include vp-767 {
+    padding-top: 34px;
   }
 }

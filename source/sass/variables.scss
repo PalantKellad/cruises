@@ -27,7 +27,7 @@ $fz-default:                        16px;
 // https://www.artlebedev.ru/kovodstvo/sections/159/#13
 $ff-rouble:                         "Rouble", "Arial", sans-serif;
 
-$ff-placeholder:                    "Placeholder", "Arial", sans-serif;
+$ff-montserrat:                    "Montserrat", "Arial", sans-serif;
 
 // Animation
 // ---------------------------------
@@ -58,13 +58,13 @@ $retina-dpi:                        144dpi;
 $retina-dppx:                       1.5dppx;
 
 :root {
-  //Font
-  --main-font: "Montserrat", "Arial", sans-serif;
-
   // Colors
   --themed-dark: #011c40;
   --base-light: #f9fbfd;
+  --logo-light: invert(92%) sepia(29%) saturate(18%) hue-rotate(161deg) brightness(101%) contrast(99%);
+  --logo-dark: invert(7%) sepia(41%) saturate(4574%) hue-rotate(204deg) brightness(96%) contrast(99%);
 
   //Shadows
-  --heading-shadow: text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --heading-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  --navigation-shadow: drop-shadow(var(--heading-shadow));
 }

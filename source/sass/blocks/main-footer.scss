@@ -1,4 +1,6 @@
 .main-footer {
+  --filter: var(--logo-light);
+
   background-color: var(--themed-dark);
   padding-top: 50px;
   padding-bottom: 50px;
@@ -7,26 +9,49 @@
     padding-top: 16px;
     padding-bottom: 16px;
   }
+
+  @include vp-767 {
+    padding-top: 35px;
+  }
 }
 
 .main-footer__navigation {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+
+  @include vp-767 {
+    flex-direction: column;
+    align-items: start;
+  }
 }
 
 .main-footer__logo {
   margin-right: 4%;
+
+  @include vp-767 {
+    margin: 0;
+    margin-bottom: 16px;
+  }
 }
 
 .main-footer__menu {
   max-width: 65%;
   margin: 0;
   margin-right: 30px;
+
+  @include vp-767 {
+    margin-bottom: 14px;
+  }
 }
 
 .main-footer__social {
   max-width: 15%;
   margin: 0;
   margin-left: auto;
+
+  @include vp-767 {
+    margin: 0;
+    min-width: 100%;
+  }
 }

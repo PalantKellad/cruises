@@ -1,0 +1,67 @@
+.toggle {
+  display: none;
+  position: relative;
+  appearance: none;
+  width: 38px;
+  height: 38px;
+  justify-content: center;
+  justify-self: end;
+  padding: 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include vp-767 {
+    display: flex;
+  }
+}
+
+.toggle__button {
+  --bg-color: var(--base-light);
+  --transition-duration: 300ms;
+
+
+  position: absolute;
+  top: 48%;
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--bg-color);
+  transition-duration: var(--transition-duration);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--bg-color);
+    transition: transform var(--transition-duration) ease-out;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--bg-color);
+    transition: transform var(--transition-duration) ease-out;
+  }
+
+  &--open {
+    background-color: transparent;
+  }
+
+  &--open::before {
+    content: "";
+    transform: rotateZ(45deg) scaleX(1.35) translate(3px, 3px);
+  }
+
+  &--open::after {
+    content: "";
+    transform: rotateZ(-45deg) scaleX(1.35) translate(3px, -3px);
+  }
+}

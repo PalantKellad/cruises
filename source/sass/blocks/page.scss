@@ -1,6 +1,11 @@
 .page {
+  display: flex;
+  flex-direction: column;
   min-width: 320px;
-  font: 400 16px / 24px var(--main-font);
+  min-height: 100vh;
+  /* stylelint-disable-next-line */
+  min-height: calc(100 * var(--vh, 1vh));
+  font: 400 16px / 24px $ff-montserrat;
   color: var(--themed-dark);
 
   @include vp-767 {
@@ -9,5 +14,22 @@
 }
 
 .page__header {
-  padding-top: 30px;
+  flex-shrink: 0;
+  padding-top: 35px;
+
+  @include vp-1023 {
+    padding-top: 28px;
+  }
+
+  @include vp-767 {
+    padding-top: 12px;
+  }
+}
+
+.page__content {
+  flex-grow: 1;
+}
+
+.page__footer {
+  flex-shrink: 0;
 }
