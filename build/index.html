@@ -301,6 +301,44 @@
           </div>
         </div>
       </section>
+      <section class="booking" style="
+          --booking-bg-big-url: url(../img/booking/bg-booking-big.webp);
+          --booking-bg-medium-url: url(../img/booking/bg-booking-medium.webp);
+          --booking-bg-small-url: url(../img/booking/bg-booking-small.webp);
+          ">
+        <div class="container">
+          <div class="booking__content">
+            <div class="booking__description">
+              <h2>Раннее бронирование</h2>
+              <p>Забронируйте тур за&nbsp;3&ndash;6&nbsp;месяцев до&nbsp;даты выезда и&nbsp;сэкономьте до&nbsp;50%</p>
+            </div>
+            <div class="booking__form form-wrapper">
+              <p>Оставьте заявку и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время</p>
+              <form name="feedback" action="https://echo.htmlacademy.ru/" method="get">
+                <label>
+                  <span>Ваше имя</span>
+                  <input type="text" name="customer-name" placeholder="Имя" required>
+                </label>
+                <label>
+                  <span>Ваш телефон</span>
+                  <input type="tel" name="customer-phone" placeholder="Телефон" pattern=".{18}" required>
+                </label>
+                <label>
+                  <span>Ваш e-mail</span>
+                  <input type="email" name="customer-email" placeholder="Email" required>
+                </label>
+                <div class="form-wrapper__personal-data-check">
+                  <label>
+                    <span>Я&nbsp;согласен на&nbsp;обработку моих персональных данных</span>
+                    <input type="checkbox" name="consent-personal-data" checked required>
+                  </label>
+                </div>
+                <button type="submit">Оставить заявку</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="page__footer main-footer">
       <div class="container">

@@ -1,0 +1,63 @@
+.form-wrapper {
+  padding: 44px 49px 50px 50px;
+  color: var(--base-light);
+  background-color: var(--themed-dark);
+
+  p {
+    margin: 0;
+    margin-bottom: 25px;
+    font: 500 18px / 1.5 $ff-montserrat;
+  }
+
+  form {
+    display: grid;
+    gap: 16px;
+  }
+
+  label {
+    position: relative;
+    width: 100%;
+    align-self: end;
+  }
+
+  input {
+    width: 100%;
+    padding: 11px 16px;
+    font: 400 14px / 1.5 $ff-montserrat;
+    color: var(--themed-dark);
+  }
+
+  span {
+    position: absolute;
+    display: block;
+    font-size: 0;
+    transform: translateY(1.5em);
+  }
+
+  button {
+    display: block;
+    padding: 16px;
+    font: 600 14px / 1.5 $ff-montserrat;
+    text-align: center;
+    color: var(--themed-dark);
+    background-color: var(--base-light);
+    border: none;
+  }
+}
+
+.form-wrapper__personal-data-check {
+  display: flex;
+
+  input {
+    width: auto;
+    order: 1
+  }
+
+  span {
+    order: 2;
+    position: static;
+    font: 400 10px / 1.3 $ff-montserrat;
+    color: var(--base-light);
+    transform: initial;
+  }
+}

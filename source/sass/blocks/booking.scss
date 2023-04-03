@@ -1,0 +1,35 @@
+.booking {
+  --bg-url: var(--booking-bg-big-url);
+
+  padding-top: 50px;
+  padding-bottom: 78px;
+  background: var(--bg-url) no-repeat var(--themed-light) center / cover;
+}
+
+.booking__content {
+  display: flex;
+  gap: 10%;
+  padding-inline: 60px;
+}
+
+.booking__description {
+  flex: 1 1 auto;
+  padding-top: 164px;
+
+  h2 {
+    margin: 0;
+    margin-bottom: 8px;
+    font: 700 40px / 1.5 $ff-montserrat;
+  }
+
+  p {
+    max-width: 30ch;
+    margin: 0;
+    margin-bottom: 10px;
+    font: 400 18px / 1.5 $ff-montserrat;
+  }
+}
+
+.booking__form {
+  flex: 1 0 34.8%;
+}
