@@ -1,0 +1,110 @@
+.card {
+  --content-transform: translateY(79.8%);
+  --content-opacity: 0;
+  --heading-inline-padding: 4px;
+  --content-bg-color: transparent;
+
+  display: grid;
+  grid-template-columns: minmax(1fr, 260px);
+  grid-template-rows: minmax(386px, 1fr);
+  overflow: hidden;
+  transition: 300ms ease-out;
+
+  @include vp-1023 {
+    --content-transform: translateY(78.6%);
+  }
+
+  @include vp-767 {
+    --content-transform: translateY(80.6%);
+  }
+
+  @include hover-focus {
+    --content-transform: translateY(0%);
+    --content-opacity: 1;
+    --heading-inline-padding: 0;
+    --content-bg-color: var(--themed-dark);
+  }
+}
+
+.card__image {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.card__content {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  padding: 30px 25px 35px;
+  background-color: var(--content-bg-color);
+  transform: var(--content-transform);
+  transition: 300ms ease-out;
+
+  @include vp-1023 {
+    padding-inline: 35px;
+  }
+
+  @include vp-767 {
+    padding-inline: 25px;
+  }
+
+  h3 {
+    flex-shrink: 0;
+    margin: 0;
+    margin-bottom: 13px;
+    padding-inline: var(--heading-inline-padding);
+    font: 500 18px / 1.5 $ff-montserrat;
+    color: var(--base-light);
+
+    @include vp-1023 {
+      padding-inline: 0;
+    }
+  }
+
+  dl {
+    flex-shrink: 0;
+    margin: 0;
+    opacity: var(--content-opacity);
+  }
+
+  dt {
+    margin: 0;
+    margin-bottom: 2px;
+    font: 500 14px / 1.4 $ff-montserrat;
+    color: var(--base-light);
+  }
+
+  dd {
+    margin: 0;
+    margin-bottom: 11px;
+    font: 400 14px / 1.4 $ff-montserrat;
+    color: var(--base-neutral);
+  }
+
+  dd:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card__link {
+  flex-shrink: 0;
+  display: block;
+  margin-top: auto;
+  text-decoration: none;
+  text-align: center;
+  font: 600 14px / 1.5 $ff-montserrat;
+  color: var(--themed-dark);
+  background-color: var(--base-light);
+  padding: 10px;
+}

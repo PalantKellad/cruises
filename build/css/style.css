@@ -388,6 +388,7 @@ template {
   --themed-dark: #011c40;
   --themed-light: #e3ecf6;
   --base-light: #f9fbfd;
+  --base-neutral: #d8d8d9;
   --logo-light: invert(92%) sepia(29%) saturate(18%) hue-rotate(161deg) brightness(101%) contrast(99%);
   --logo-dark: invert(7%) sepia(41%) saturate(4574%) hue-rotate(204deg) brightness(96%) contrast(99%);
   --heading-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -1126,6 +1127,143 @@ button,
   font: 400 14px/1.4 "Montserrat", "Arial", sans-serif;
 }
 
+.cruises {
+  padding-top: 64px;
+  padding-bottom: 120px;
+}
+
+.cruises h2 {
+  margin: 0;
+  margin-bottom: 49px;
+  font: 600 28px/1.5 "Montserrat", "Arial", sans-serif;
+  text-align: center;
+}
+
+.cruises__cards {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 30px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-inline: 15px;
+}
+
+.card {
+  --content-transform: translateY(79.8%);
+  --content-opacity: 0;
+  --heading-inline-padding: 4px;
+  --content-bg-color: transparent;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(1fr, 260px);
+  grid-template-columns: minmax(1fr, 260px);
+  -ms-grid-rows: minmax(386px, 1fr);
+  grid-template-rows: minmax(386px, 1fr);
+  overflow: hidden;
+  -webkit-transition: 300ms ease-out;
+  -o-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+
+.card.focus-visible:focus {
+  --content-transform: translateY(0%);
+  --content-opacity: 1;
+  --heading-inline-padding: 0;
+  --content-bg-color: var(--themed-dark);
+}
+
+.card__image {
+  -ms-grid-column: 1;
+  grid-column: 1/1;
+  -ms-grid-row: 1;
+  grid-row: 1/1;
+}
+
+.card__image img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.card__content {
+  -ms-grid-column: 1;
+  grid-column: 1/1;
+  -ms-grid-row: 1;
+  grid-row: 1/1;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  padding: 30px 25px 35px;
+  background-color: var(--content-bg-color);
+  -webkit-transform: var(--content-transform);
+  -ms-transform: var(--content-transform);
+  transform: var(--content-transform);
+  -webkit-transition: 300ms ease-out;
+  -o-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+
+.card__content h3 {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0;
+  margin-bottom: 13px;
+  padding-inline: var(--heading-inline-padding);
+  font: 500 18px/1.5 "Montserrat", "Arial", sans-serif;
+  color: var(--base-light);
+}
+
+.card__content dl {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0;
+  opacity: var(--content-opacity);
+}
+
+.card__content dt {
+  margin: 0;
+  margin-bottom: 2px;
+  font: 500 14px/1.4 "Montserrat", "Arial", sans-serif;
+  color: var(--base-light);
+}
+
+.card__content dd {
+  margin: 0;
+  margin-bottom: 11px;
+  font: 400 14px/1.4 "Montserrat", "Arial", sans-serif;
+  color: var(--base-neutral);
+}
+
+.card__content dd:last-child {
+  margin-bottom: 0;
+}
+
+.card__link {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: block;
+  margin-top: auto;
+  text-decoration: none;
+  text-align: center;
+  font: 600 14px/1.5 "Montserrat", "Arial", sans-serif;
+  color: var(--themed-dark);
+  background-color: var(--base-light);
+  padding: 10px;
+}
+
 /* @mixin hover-focus {
     @media (hover: hover) {
       &:hover:not(.focus-visible) {
@@ -1260,6 +1398,7 @@ button,
 
   .advantages {
     padding-top: 90px;
+    padding-bottom: 100px;
   }
 
   .advantages h2 {
@@ -1277,6 +1416,27 @@ button,
   .advantages__item::before {
     --icon-size: var(--advantages-icon-medium-size);
     margin-bottom: 14px;
+  }
+
+  .cruises {
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+
+  .cruises h2 {
+    font: 600 26px/1.5 "Montserrat", "Arial", sans-serif;
+  }
+
+  .card {
+    --content-transform: translateY(78.6%);
+  }
+
+  .card__content {
+    padding-inline: 35px;
+  }
+
+  .card__content h3 {
+    padding-inline: 0;
   }
 }
 
@@ -1470,6 +1630,7 @@ button,
 
   .advantages {
     padding-top: 57px;
+    padding-bottom: 121px;
   }
 
   .advantages h2 {
@@ -1495,5 +1656,36 @@ button,
 
   .advantages__item dt {
     max-width: 16ch;
+  }
+
+  .cruises {
+    padding-top: 57px;
+    padding-bottom: 65px;
+  }
+
+  .cruises h2 {
+    margin-bottom: 30px;
+    font: 600 24px/1.5 "Montserrat", "Arial", sans-serif;
+  }
+
+  .cruises__cards {
+    padding-inline: 10px;
+  }
+
+  .card {
+    --content-transform: translateY(80.6%);
+  }
+
+  .card__content {
+    padding-inline: 25px;
+  }
+}
+
+@media (hover: hover) {
+  .card:hover:not(.focus-visible) {
+    --content-transform: translateY(0%);
+    --content-opacity: 1;
+    --heading-inline-padding: 0;
+    --content-bg-color: var(--themed-dark);
   }
 }
