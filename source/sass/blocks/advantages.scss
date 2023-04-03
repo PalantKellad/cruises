@@ -1,11 +1,63 @@
 .advantages {
   --bg-url: var(--advantages-bg-big-url);
 
-  padding-top: 50px;
-  background: var(--bg-url) no-repeat var(--themed-dark) center / cover;
+  position: relative;
+  padding-top: 110px;
+  padding-bottom: 120px;
+
+  @include vp-1023 {
+    padding-top: 90px;
+  }
+
+  @include vp-767 {
+    padding-top: 57px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-url) no-repeat center / cover;
+    background-color: var(--themed-light);
+    background-blend-mode: overlay;
+    opacity: 0.9;
+  }
 
   h2 {
+    margin: 0;
+    margin-bottom: 50px;
+    font: 600 28px / 1.5 $ff-montserrat;
     text-align: center;
+
+    @include vp-1023 {
+      font: 600 26px / 1.5 $ff-montserrat;
+    }
+
+    @include vp-767 {
+      margin-bottom: 30px;
+      font: 600 24px / 1.5 $ff-montserrat;
+    }
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: minmax(0, 1fr);
+    gap: 3.5%;
+    margin: 0;
+
+    @include vp-1023 {
+      gap: 4.4%;
+    }
+
+    @include vp-767 {
+      grid-template-columns: minmax(0, 1fr);
+      grid-auto-rows: initial;
+      gap: 3.8%;
+    }
   }
 }
 
@@ -15,32 +67,56 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 40px 40px 66px;
+  padding: 30px 30px 45px;
   color: var(--color);
+  background-color: var(--base-light);
 
-  dt {
-    margin-bottom: 15px;
-    font: 400 24px / 34px $ff-montserrat;
-    color: var(--heading-color);
+  @include vp-1023 {
+    padding: 23px 18px 19px;
+  }
+
+  @include vp-767 {
+    padding: 20px 15px 19px 19px;
+  }
+
+  &::before {
+    --icon-size: var(--advantages-icon-big-size);
+    --icon-url: var(--advantages-icon-url);
+
+    content: "";
+    display: block;
+    flex-shrink: 0;
+    width: var(--icon-size);
+    min-width: var(--icon-size);
+    height: 32px;
+    margin-bottom: 18px;
+    background-color: var(--themed-dark);
+    mask: var(--icon-url) no-repeat left top / contain;
 
     @include vp-1023 {
-      margin-bottom: 7px;
+      --icon-size: var(--advantages-icon-medium-size);
+
+      margin-bottom: 14px;
     }
 
     @include vp-767 {
-      font-size: 20px;
-      line-height: 27px;
+      --icon-size: var(--advantages-icon-small-size);
+
+      margin-bottom: 18px;
+    }
+  }
+
+  dt {
+    margin-bottom: 10px;
+    font: 500 18px / 1.5 $ff-montserrat;
+
+    @include vp-767 {
+      max-width: 16ch;
     }
   }
 
   dd {
     margin: 0;
-    font: 400 16px / 22px $ff-montserrat;
-    color: var(--text-color);
-
-    @include vp-767 {
-      font-size: 14px;
-      line-height: 19px;
-    }
+    font: 400 14px / 1.4 $ff-montserrat;
   }
 }

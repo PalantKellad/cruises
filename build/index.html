@@ -21,9 +21,9 @@
 <body>
   <div class="page">
     <header class="page__header main-header" style="
-          --header-bg-big-url: url(../img/hero-big.webp);
-          --header-bg-medium-url: url(../img/hero-medium.webp);
-          --header-bg-small-url: url(../img/hero-small.webp);
+          --header-bg-big-url: url(../img/hero/hero-big.webp);
+          --header-bg-medium-url: url(../img/hero/hero-medium.webp);
+          --header-bg-small-url: url(../img/hero/hero-small.webp);
           ">
       <div class="container">
         <nav class="main-header__navigation main-navigation">
@@ -64,35 +64,50 @@
           </div>
           <div class="about__picture">
             <picture>
-              <source type="image/webp" media="(min-width: 1024px)" srcset="./img/pinguins-big.webp 1x, ./img/pinguins-big@2x.webp 2x" width="560" height="301">
-              <source type="image/webp" media="(max-width: 1023px)" srcset="./img/pinguins-medium.webp 1x, ./img/pinguins-medium@2x.webp 2x" width="324" height="174">
-              <source type="image/webp" media="(max-width: 767px)" srcset="./img/pinguins-small.webp 1x, ./img/pinguins-small@2x.webp 2x" width="290" height="156">
+              <source type="image/webp" media="(min-width: 1024px)" srcset="./img/about/pinguins-big.webp 1x, ./img/about/pinguins-big@2x.webp 2x" width="560" height="301">
+              <source type="image/webp" media="(max-width: 1023px)" srcset="./img/about/pinguins-medium.webp 1x, ./img/about/pinguins-medium@2x.webp 2x" width="324" height="174">
+              <source type="image/webp" media="(max-width: 767px)" srcset="./img/about/pinguins-small.webp 1x, ./img/about/pinguins-small@2x.webp 2x" width="290" height="156">
               <img src="./img/pinguins-big.webp" width="560" height="301" alt="Три пингвина стоят на снежном склоне и смотрят в кадр.">
             </picture>
           </div>
         </div>
       </section>
       <section class="advantages" style="
-          --advantages-bg-big-url: url(../img/bg-advantages-big.webp);
-          --advantages-bg-medium-url: url(../img/bg-advantages-medium.webp);
-          --advantages-bg-small-url: url(../img/bg-advantages-small.webp);
+          --advantages-bg-big-url: url(../img/advantages/bg-advantages-big.webp);
+          --advantages-bg-medium-url: url(../img/advantages/bg-advantages-medium.webp);
+          --advantages-bg-small-url: url(../img/advantages/bg-advantages-small.webp);
           ">
         <div class="container">
           <h2>Преимущества</h2>
           <dl>
-            <div class="advantages__item" style="--bg-url:url(../img/stack.svg#icon-ship);">
+            <div class="advantages__item" style="
+              --advantages-icon-url:url(../img/stack.svg#icon-ship);
+              --advantages-icon-big-size: 33px;
+              --advantages-icon-medium-size: 22px;
+              --advantages-icon-small-size: 22px;
+              ">
               <dt>Небольшой круизный лайнер</dt>
               <dd>
                 Круизный лайнер, рассчитанный всего лишь на&nbsp;300 гостей, поможет избежать шума и&nbsp;очередей и&nbsp;даст возможность насладиться видами и&nbsp;природой.
               </dd>
             </div>
-            <div class="advantages__item" style="--bg-url:url(../img/stack.svg#icon-check);">
-              <dt>Система всё включено</dt>
+            <div class="advantages__item" style="
+              --advantages-icon-url:url(../img/stack.svg#icon-check);
+              --advantages-icon-big-size: 38px;
+              --advantages-icon-medium-size: 30px;
+              --advantages-icon-small-size: 30px;
+              ">
+              <dt>Система всё&nbsp;включено</dt>
               <dd>
                 Все наши круизы работают по&nbsp;системе &laquo;Все Включено&raquo;. Великолепные блюда и&nbsp;безлимитный бар доступны для вас 24 часа.
               </dd>
             </div>
-            <div class="advantages__item" style="--bg-url:url(../img/stack.svg#icon-boat);">
+            <div class="advantages__item" style="
+              --advantages-icon-url:url(../img/stack.svg#icon-boat);
+              --advantages-icon-big-size: 44px;
+              --advantages-icon-medium-size: 36px;
+              --advantages-icon-small-size: 37px;
+              ">
               <dt>Экскурсионные туры на&nbsp;Zodiac</dt>
               <dd>
                 Экскурсионные туры к&nbsp;берегам Антарктиды совершаются на&nbsp;оборудованных лодках типа Zodiac c&nbsp;опытными экскурсоводами.

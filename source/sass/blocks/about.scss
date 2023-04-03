@@ -9,12 +9,13 @@
     grid-template-columns: 48% 48%;
     column-gap: 4%;
     padding-top: 91px;
-    padding-bottom: 100px;
+    padding-bottom: 82px;
   }
 
   @include vp-767 {
     display: block;
     padding-top: 56px;
+    padding-bottom: 85px;
   }
 }
 
