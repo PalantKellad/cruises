@@ -2,16 +2,14 @@
   --filter: var(--logo-light);
 
   background-color: var(--themed-dark);
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-block: 50px;
 
   @include vp-1023 {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-block: 44px;
   }
 
   @include vp-767 {
-    padding-top: 35px;
+    padding-block: 35px;
   }
 }
 
@@ -27,7 +25,7 @@
 }
 
 .main-footer__logo {
-  margin-right: 4%;
+  margin-right: 3.5%;
 
   @include vp-767 {
     margin: 0;

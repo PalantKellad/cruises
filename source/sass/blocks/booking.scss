@@ -2,24 +2,59 @@
   --bg-url: var(--booking-bg-big-url);
 
   padding-top: 50px;
-  padding-bottom: 78px;
+  padding-bottom: 50px;
   background: var(--bg-url) no-repeat var(--themed-light) center / cover;
+
+  @include vp-1023 {
+    padding-bottom: 100px;
+  }
+
+  @include vp-767 {
+    padding-bottom: 65px;
+  }
 }
 
 .booking__content {
   display: flex;
   gap: 10%;
   padding-inline: 60px;
+
+  @include vp-1023 {
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 0;
+  }
 }
 
 .booking__description {
   flex: 1 1 auto;
   padding-top: 164px;
 
+  @include vp-1023 {
+    padding-top: 38px;
+    padding-inline: 100px;
+  }
+
+  @include vp-767 {
+    padding-top: 9px;
+    padding-inline: 10px;
+  }
+
   h2 {
     margin: 0;
     margin-bottom: 8px;
     font: 700 40px / 1.5 $ff-montserrat;
+
+    @include vp-1023 {
+      margin-bottom: 5px;
+      font: 700 34px / 1.5 $ff-montserrat;
+      text-align: center;
+    }
+
+    @include vp-767 {
+      margin-bottom: 14px;
+      font: 700 24px / 1.3 $ff-montserrat;
+    }
   }
 
   p {
@@ -27,9 +62,28 @@
     margin: 0;
     margin-bottom: 10px;
     font: 400 18px / 1.5 $ff-montserrat;
+
+    @include vp-1023 {
+      margin: 0 auto;
+      margin-bottom: 52px;
+      text-align: center;
+    }
+
+    @include vp-767 {
+      margin-bottom: 32px;
+      font: 400 16px / 1.4 $ff-montserrat;
+    }
   }
 }
 
 .booking__form {
   flex: 1 0 34.8%;
+
+  @include vp-1023 {
+    max-width: 59.5%;
+  }
+
+  @include vp-767 {
+    max-width: 100%;
+  }
 }
