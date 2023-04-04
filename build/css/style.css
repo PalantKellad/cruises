@@ -1671,7 +1671,9 @@ button,
   }
 
   .advantages dl {
-    gap: 4.4%;
+    -webkit-column-gap: 4.4%;
+    -moz-column-gap: 4.4%;
+    column-gap: 4.4%;
   }
 
   .advantages__item {
@@ -1964,7 +1966,7 @@ button,
 
   .advantages {
     padding-top: 57px;
-    padding-bottom: 121px;
+    padding-bottom: 65px;
   }
 
   .advantages h2 {
@@ -1976,7 +1978,7 @@ button,
     -ms-grid-columns: minmax(0, 1fr);
     grid-template-columns: minmax(0, 1fr);
     grid-auto-rows: initial;
-    gap: 3.8%;
+    gap: 28px;
   }
 
   .advantages__item {
