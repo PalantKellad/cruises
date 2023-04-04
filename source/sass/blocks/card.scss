@@ -101,10 +101,11 @@
   flex-shrink: 0;
   display: block;
   margin-top: auto;
+  padding: 10px;
   text-decoration: none;
   text-align: center;
   font: 600 14px / 1.5 $ff-montserrat;
   color: var(--themed-dark);
   background-color: var(--base-light);
-  padding: 10px;
+  user-select: none;
 }

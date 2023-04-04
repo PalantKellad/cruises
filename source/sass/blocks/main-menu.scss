@@ -61,6 +61,7 @@
   mask: linear-gradient(#000000 0 0) content-box,
     linear-gradient(#000000 0 0) 0 / var(--_position, 0%) padding-box no-repeat;
   transition: 0.5s;
+  user-select: none;
 
   &:hover {
     --_position: 100%;

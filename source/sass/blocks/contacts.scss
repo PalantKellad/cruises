@@ -104,4 +104,8 @@
       mask: var(--icon-url) no-repeat center top / contain;
     }
   }
+
+  a:not(:last-child) {
+    margin-bottom: 5px;
+  }
 }

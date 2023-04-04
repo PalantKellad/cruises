@@ -881,6 +881,10 @@ button,
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .main-menu__link:hover {
@@ -1090,7 +1094,10 @@ button,
   -ms-grid-columns: (minmax(0, 1fr))[3];
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-auto-rows: minmax(0, 1fr);
-  gap: 3.5%;
+  -webkit-column-gap: 3.5%;
+  -moz-column-gap: 3.5%;
+  column-gap: 3.5%;
+  row-gap: 40px;
   margin: 0;
 }
 
@@ -1264,12 +1271,16 @@ button,
   flex-shrink: 0;
   display: block;
   margin-top: auto;
+  padding: 10px;
   text-decoration: none;
   text-align: center;
   font: 600 14px/1.5 "Montserrat", "Arial", sans-serif;
   color: var(--themed-dark);
   background-color: var(--base-light);
-  padding: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .booking {
@@ -1365,6 +1376,10 @@ button,
   color: var(--themed-dark);
   background-color: var(--base-light);
   border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .form-wrapper__personal-data-check {
@@ -1503,6 +1518,10 @@ button,
   background-color: var(--themed-dark);
   -webkit-mask: var(--icon-url) no-repeat center top/contain;
   mask: var(--icon-url) no-repeat center top/contain;
+}
+
+.contacts__address a:not(:last-child) {
+  margin-bottom: 5px;
 }
 
 .map {
