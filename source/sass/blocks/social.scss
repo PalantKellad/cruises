@@ -5,16 +5,26 @@
   gap: 13px;
 
   @include vp-1023 {
-    gap: 13px;
+    gap: 9px;
   }
 }
 
 .social__link {
+  --icon-size: 30px;
+
   display: grid;
   place-items: center;
+  min-width: var(--icon-size);
+  width: var(--icon-size);
+  height: var(--icon-size);
   padding: 5px;
 
   @include vp-1023 {
-    max-width: 16px;
+    --icon-size: 26px;
   }
+}
+
+.social__img {
+  width: 100%;
+  height: auto;
 }
