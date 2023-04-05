@@ -1,5 +1,6 @@
 .main-navigation {
   --filter: var(--logo-light);
+  --mobile-menu-display: none;
 
   display: flex;
   flex-wrap: wrap;
@@ -12,17 +13,36 @@
   }
 
   &--is-open {
-    --filter: var(--logo-dark);
-
     @include vp-767 {
+      --filter: var(--logo-dark);
+      --mobile-menu-display: flex;
+
+      position: absolute;
+      z-index: 1000;
+      top: 0;
+      right: 0;
+      bottom: 0;
       display: grid;
-      row-gap: 22px;
-      min-width: 285px;
       grid-template-columns: [full-start] minmax(42px, 1fr) minmax(13px, 1fr) [full-end];
       grid-auto-rows: min-content;
       align-items: start;
+      row-gap: 22px;
+      min-width: 285px;
+      height: 100%;
+      margin-left: 36px;
       padding-top: 15px;
       padding-left: 15px;
+      overflow-y: auto;
+      background-color: var(--base-light);
+
+      &::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+      }
     }
   }
 }
@@ -36,6 +56,7 @@
   margin: 0;
 
   @include vp-767 {
+    display: var(--mobile-menu-display);
     grid-column: full;
     order: 2;
     min-width: 100%;
@@ -44,4 +65,8 @@
 
 .main-navigation__toggle {
   margin-right: -7px;
+
+  @include vp-767 {
+    /* margin-right: 5px; */
+  }
 }

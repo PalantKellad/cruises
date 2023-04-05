@@ -811,6 +811,7 @@ button,
 
 .main-navigation {
   --filter: var(--logo-light);
+  --mobile-menu-display: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -824,10 +825,6 @@ button,
   align-items: center;
   -webkit-filter: var(--navigation-shadow);
   filter: var(--navigation-shadow);
-}
-
-.main-navigation--is-open {
-  --filter: var(--logo-dark);
 }
 
 .main-navigation__logo {
@@ -1043,22 +1040,24 @@ button,
   transition: transform var(--transition-duration) ease-out, -webkit-transform var(--transition-duration) ease-out;
 }
 
-.toggle__button--open {
+.toggle__button--is-open {
   background-color: transparent;
 }
 
-.toggle__button--open::before {
+.toggle__button--is-open::before {
+  --bg-color: var(--themed-dark);
   content: "";
-  -webkit-transform: rotateZ(45deg) scaleX(1.35) translate(3px, 3px);
-  -ms-transform: rotate(45deg) scaleX(1.35) translate(3px, 3px);
-  transform: rotateZ(45deg) scaleX(1.35) translate(3px, 3px);
+  -webkit-transform: scaleX(0.7) translate(-12px, 4px) rotate(-35deg);
+  -ms-transform: scaleX(0.7) translate(-12px, 4px) rotate(-35deg);
+  transform: scaleX(0.7) translate(-12px, 4px) rotate(-35deg);
 }
 
-.toggle__button--open::after {
+.toggle__button--is-open::after {
+  --bg-color: var(--themed-dark);
   content: "";
-  -webkit-transform: rotateZ(-45deg) scaleX(1.35) translate(3px, -3px);
-  -ms-transform: rotate(-45deg) scaleX(1.35) translate(3px, -3px);
-  transform: rotateZ(-45deg) scaleX(1.35) translate(3px, -3px);
+  -webkit-transform: scaleX(0.7) translate(-12px, -8px) rotate(35deg);
+  -ms-transform: scaleX(0.7) translate(-12px, -8px) rotate(35deg);
+  transform: scaleX(0.7) translate(-12px, -8px) rotate(35deg);
 }
 
 .advantages {
@@ -1811,27 +1810,20 @@ button,
     font: 400 16px/1.4 "Montserrat", "Arial", sans-serif;
   }
 
-  .main-header__navigation--is-open {
-    position: absolute;
-    z-index: 1000;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    min-width: 285px;
-    height: 100%;
-    overflow-y: auto;
-    background-color: var(--base-light);
-  }
-
   .main-header__description {
     padding-top: 126px;
   }
 
   .main-navigation--is-open {
+    --filter: var(--logo-dark);
+    --mobile-menu-display: flex;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    bottom: 0;
     display: -ms-grid;
     display: grid;
-    row-gap: 22px;
-    min-width: 285px;
     -ms-grid-columns: [full-start] minmax(42px, 1fr) minmax(13px, 1fr) [full-end];
     grid-template-columns: [full-start] minmax(42px, 1fr) minmax(13px, 1fr) [full-end];
     grid-auto-rows: -webkit-min-content;
@@ -1839,16 +1831,36 @@ button,
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: start;
+    row-gap: 22px;
+    min-width: 285px;
+    height: 100%;
+    margin-left: 36px;
     padding-top: 15px;
     padding-left: 15px;
+    overflow-y: auto;
+    background-color: var(--base-light);
+  }
+
+  .main-navigation--is-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
   }
 
   .main-navigation__menu {
+    display: var(--mobile-menu-display);
     grid-column: full;
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
     order: 2;
     min-width: 100%;
+  }
+
+  .main-navigation__toggle {
+    /* margin-right: 5px; */
   }
 
   .logo {
@@ -1860,14 +1872,7 @@ button,
   }
 
   .main-menu {
-    display: none;
-  }
-
-  .main-menu--is-open {
     --color: var(--themed-dark);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;

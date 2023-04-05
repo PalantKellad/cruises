@@ -16,6 +16,10 @@
   <link rel="preload" href="./fonts/Montserrat-Medium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="./fonts/Montserrat-SemiBold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="./fonts/Montserrat-Bold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="./img/hero/hero-small.webp" as="image" media="(max-width: 767px) and (max-resolution: 1dppx)">
+  <link rel="preload" href="./img/hero/hero-small@2x.webp" as="image" media="(max-width: 767px) and (max-resolution: 2dppx)">
+  <link rel="preconnect" href="//api-maps.yandex.ru">
+  <link rel="dns-prefetch" href="//api-maps.yandex.ru">
 </head>
 
 <body>
@@ -26,7 +30,7 @@
           --header-bg-small-url: url(../img/hero/hero-small.webp);
           ">
       <div class="container">
-        <nav class="main-header__navigation main-navigation">
+        <nav class="main-navigation" data-header>
           <a class="main-navigation__logo logo" href="./">
             <img src="./img/svg/logo.svg" width="70" height="38" alt="Логотип компании Круизы в Антарктику.">
           </a>
@@ -44,9 +48,9 @@
               <a class="main-menu__link" href="#contacts">Контакты</a>
             </li>
           </ul>
-          <button class="main-navigation__toggle toggle toggle--no-js" type="button">
+          <button class="main-navigation__toggle toggle" type="button">
             <span class="visually-hidden">Открыть меню</span>
-            <span class="toggle__button"></span>
+            <span class="toggle__button" data-burger></span>
           </button>
         </nav>
         <div class="main-header__description">
@@ -139,7 +143,7 @@
                 <div class="card__image">
                   <picture>
                     <source type="image/webp" srcset="./img/cruises/astoria.webp 1x, ./img/cruises/astoria@2x.webp 2x" width="260" height="386">
-                    <img src="./img/cruises/astoria.webp" width="260" height="386" alt="Плоская заснеженная гора, под которой располагается ледник, уходящий обрывом в замёрзший океан.">
+                    <img src="./img/cruises/astoria.webp" width="260" height="386" loading="lazy" alt="Плоская заснеженная гора, под которой располагается ледник, уходящий обрывом в замёрзший океан.">
                   </picture>
                 </div>
               </article>
@@ -161,7 +165,7 @@
                 <div class="card__image">
                   <picture>
                     <source type="image/webp" srcset="./img/cruises/aline.webp 1x, ./img/cruises/aline@2x.webp 2x" width="260" height="386">
-                    <img src="./img/cruises/aline.webp" width="260" height="386" alt="Плоская заснеженная гора, под которой располагается ледник, уходящий обрывом в замёрзший океан.">
+                    <img src="./img/cruises/aline.webp" width="260" height="386" loading="lazy" alt="Плоская заснеженная гора, под которой располагается ледник, уходящий обрывом в замёрзший океан.">
                   </picture>
                 </div>
               </article>
@@ -183,7 +187,7 @@
                 <div class="card__image">
                   <picture>
                     <source type="image/webp" srcset="./img/cruises/atlantis.webp 1x, ./img/cruises/atlantis@2x.webp 2x" width="260" height="386">
-                    <img src="./img/cruises/atlantis.webp" width="260" height="386" alt="Айсберг с плоской вершиной в океане.">
+                    <img src="./img/cruises/atlantis.webp" width="260" height="386" loading="lazy" alt="Айсберг с плоской вершиной в океане.">
                   </picture>
                 </div>
               </article>
@@ -205,7 +209,7 @@
                 <div class="card__image">
                   <picture>
                     <source type="image/webp" srcset="./img/cruises/odysseus.webp 1x, ./img/cruises/odysseus@2x.webp 2x" width="260" height="386">
-                    <img src="./img/cruises/odysseus.webp" width="260" height="386" alt="Озеро среди заснеженных гор.">
+                    <img src="./img/cruises/odysseus.webp" width="260" height="386" loading="lazy" alt="Озеро среди заснеженных гор.">
                   </picture>
                 </div>
               </article>
@@ -227,7 +231,7 @@
                 <div class="card__image">
                   <picture>
                     <source type="image/webp" srcset="./img/cruises/olympia.webp 1x, ./img/cruises/olympia@2x.webp 2x" width="260" height="386">
-                    <img src="./img/cruises/olympia.webp" width="260" height="386" alt="Стая пингвинов на снежном поле на фоне отвесного ледяного обрыва.">
+                    <img src="./img/cruises/olympia.webp" width="260" height="386" loading="lazy" alt="Стая пингвинов на снежном поле на фоне отвесного ледяного обрыва.">
                   </picture>
                 </div>
               </article>
@@ -249,7 +253,7 @@
                 <div class="card__image">
                   <picture>
                     <source type="image/webp" srcset="./img/cruises/aurora.webp 1x, ./img/cruises/aurora@2x.webp 2x" width="260" height="386">
-                    <img src="./img/cruises/aurora.webp" width="260" height="386" alt="Каменистый берег океана с ледником на фоне.">
+                    <img src="./img/cruises/aurora.webp" width="260" height="386" loading="lazy" alt="Каменистый берег океана с ледником на фоне.">
                   </picture>
                 </div>
               </article>
@@ -271,7 +275,7 @@
                 <div class="card__image">
                   <picture>
                     <source type="image/webp" srcset="./img/cruises/leonor.webp 1x, ./img/cruises/leonor@2x.webp 2x" width="260" height="386">
-                    <img src="./img/cruises/leonor.webp" width="260" height="386" alt="Парусная яхта плывёт к заснеженному берегу.">
+                    <img src="./img/cruises/leonor.webp" width="260" height="386" loading="lazy" alt="Парусная яхта плывёт к заснеженному берегу.">
                   </picture>
                 </div>
               </article>
@@ -293,7 +297,7 @@
                 <div class="card__image">
                   <picture>
                     <source type="image/webp" srcset="./img/cruises/minion-1.webp 1x, ./img/cruises/minion-1@2x.webp 2x" width="260" height="386">
-                    <img src="./img/cruises/minion-1.webp" width="260" height="386" alt="Группа людей поднимается от океана по заснеженному склону.">
+                    <img src="./img/cruises/minion-1.webp" width="260" height="386" loading="lazy" alt="Группа людей поднимается от океана по заснеженному склону.">
                   </picture>
                 </div>
               </article>
@@ -411,9 +415,9 @@
       </div>
     </footer>
   </div>
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=206dc831-42aa-413d-81c1-f9590a1025b6"></script>
-  <script src="./js/vendor.min.js"></script>
-  <script src="./js/main.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru_RU&amp;apikey=206dc831-42aa-413d-81c1-f9590a1025b6" defer></script>
+  <script src="./js/vendor.min.js" defer></script>
+  <script src="./js/main.min.js" defer></script>
 </body>
 
 </html>

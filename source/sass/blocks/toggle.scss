@@ -51,17 +51,21 @@
     transition: transform var(--transition-duration) ease-out;
   }
 
-  &--open {
+  &--is-open {
     background-color: transparent;
   }
 
-  &--open::before {
+  &--is-open::before {
+    --bg-color: var(--themed-dark);
+
     content: "";
-    transform: rotateZ(45deg) scaleX(1.35) translate(3px, 3px);
+    transform: scaleX(0.7) translate(-12px, 4px) rotate(-35deg);
   }
 
-  &--open::after {
+  &--is-open::after {
+    --bg-color: var(--themed-dark);
+
     content: "";
-    transform: rotateZ(-45deg) scaleX(1.35) translate(3px, -3px);
+    transform: scaleX(0.7) translate(-12px, -8px) rotate(35deg);
   }
 }
