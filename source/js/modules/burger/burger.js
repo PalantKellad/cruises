@@ -1,9 +1,9 @@
-import {ScrollLock} from './scroll-lock';
-import {FocusLock} from './focus-lock';
+import {ScrollLock} from '../../utils/scroll-lock';
+import {FocusLock} from '../../utils/focus-lock';
 
 export class Burger {
   constructor() {
-    this._header = document.querySelector('[data-header]');
+    this._header = document.querySelector('[data-navigation]');
     this._burger = document.querySelector('[data-burger-element]');
     this._burgerButton = document.querySelector('[data-burger-button]');
     this._scrollLock = new ScrollLock();
@@ -27,6 +27,7 @@ export class Burger {
     this._isMenuOpen = true;
     this._header.classList.add('main-navigation--is-open');
     this._burgerButton.classList.add('toggle__button--is-open');
+    this._burger.setAttribute('aria-pressed', 'true');
     this._scrollLock.disableScrolling();
     document.addEventListener('keydown', this._onDocumentKeydown);
     document.addEventListener('click', this._onDocumentClick);
@@ -40,6 +41,7 @@ export class Burger {
     this._isMenuOpen = false;
     this._header.classList.remove('main-navigation--is-open');
     this._burgerButton.classList.remove('toggle__button--is-open');
+    this._burger.setAttribute('aria-pressed', 'false');
     this._scrollLock.enableScrolling();
     this._focusLock.unlock('[data-header]');
     document.removeEventListener('keydown', this._onDocumentKeydown);

@@ -1,6 +1,8 @@
 .main-navigation {
   --filter: var(--logo-light);
   --mobile-menu-display: none;
+  --menu-pointer-events: none;
+  --visibility: hidden;
 
   display: flex;
   flex-wrap: wrap;
@@ -16,8 +18,9 @@
     @include vp-767 {
       --filter: var(--logo-dark);
       --mobile-menu-display: flex;
-
-      position: absolute;
+      --menu-pointer-events: auto;
+      --visibility: visible;
+      position: fixed;
       z-index: 1000;
       top: 0;
       right: 0;
@@ -28,7 +31,6 @@
       grid-auto-rows: min-content;
       align-items: start;
       row-gap: 22px;
-      width: 100%;
       height: 100%;
       padding-top: 15px;
       padding-left: 15px;
@@ -60,15 +62,13 @@
     grid-column: full;
     order: 2;
     min-width: 100%;
-    height: 100vh;
+    height: 80vh;
     overflow-y: auto;
+    pointer-events: var(--menu-pointer-events);
+    visibility: var(--visibility);
   }
 }
 
 .main-navigation__toggle {
   margin-right: -7px;
-
-  @include vp-767 {
-    /* margin-right: 5px; */
-  }
 }

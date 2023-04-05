@@ -53,6 +53,15 @@
   }
 }
 
+.main-header__navigation-container {
+  display: contents;
+
+  @include vp-767 {
+    display: block;
+    min-height: 38px;
+  }
+}
+
 .main-header__description {
   padding: 197px 95px 50px;
 

@@ -25,6 +25,8 @@
 
   &--footer {
     @include vp-767 {
+      --color: var(--base-light);
+
       display: flex;
       flex-direction: column;
       align-items: start;
@@ -32,6 +34,7 @@
       row-gap: 7px;
       min-width: 100%;
       margin: 0;
+      padding-left: 0;
     }
   }
 }

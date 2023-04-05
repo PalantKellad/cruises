@@ -1,6 +1,33 @@
-ymaps.ready(initMap);
+const iObserver = new IntersectionObserver(function (entries) {
+  if (entries[0].isIntersecting === true) {
+    loadMap();
+    iObserver.unobserve(entries[0].target);
+  }
+}, {
+  threshold: [0],
+});
+
+iObserver.observe(document.getElementById('map'));
+
+function loadMap() {
+  let map = document.getElementById('map');
+  if (!map.classList.contains('js--loaded')) {
+    map.classList.add('js--loaded');
+
+    if (typeof ymaps === 'undefined') {
+      let js = document.createElement('script');
+      js.src = 'https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru_RU&amp;apikey=206dc831-42aa-413d-81c1-f9590a1025b6';
+      document.body.appendChild(js);
+      js.onload = function () {
+        ymaps.ready(initMap);
+      };
+    } else {
+      ymaps.ready(initMap);
+    }
+  }
+}
+
 function initMap() {
-  // Создание карты.
   const myMap = new ymaps.Map('map', {
     center: [59.938496, 30.323135],
     zoom: 16,

@@ -30,29 +30,31 @@
           --header-bg-small-url: url(../img/hero/hero-small.webp);
           ">
       <div class="container">
-        <nav class="main-navigation" data-header>
-          <a class="main-navigation__logo logo" href="./">
-            <img src="./img/svg/logo.svg" width="70" height="38" alt="Логотип компании Круизы в Антарктику.">
-          </a>
-          <ul class="main-navigation__menu main-menu reset-list">
-            <li>
-              <a class="main-menu__link" href="#advantages">Преимущества</a>
-            </li>
-            <li>
-              <a class="main-menu__link" href="routes.html">Направления</a>
-            </li>
-            <li>
-              <a class="main-menu__link" href="#upcoming-cruises">Ближайшие круизы</a>
-            </li>
-            <li>
-              <a class="main-menu__link" href="#contacts">Контакты</a>
-            </li>
-          </ul>
-          <button class="main-navigation__toggle toggle" data-burger-element type="button">
-            <span class="visually-hidden">Открыть меню</span>
-            <span class="toggle__button" data-burger-button></span>
-          </button>
-        </nav>
+        <div class="main-header__navigation-container">
+          <nav class="main-navigation" data-navigation>
+            <a class="main-navigation__logo logo" data-close-menu href="./">
+              <img src="./img/svg/logo.svg" width="70" height="38" alt="Логотип компании Круизы в Антарктику.">
+            </a>
+            <ul class="main-navigation__menu main-menu reset-list">
+              <li>
+                <a class="main-menu__link" data-close-menu href="#advantages">Преимущества</a>
+              </li>
+              <li>
+                <a class="main-menu__link" data-close-menu href="routes.html">Направления</a>
+              </li>
+              <li>
+                <a class="main-menu__link" data-close-menu href="#upcoming-cruises">Ближайшие круизы</a>
+              </li>
+              <li>
+                <a class="main-menu__link" data-close-menu href="#contacts">Контакты</a>
+              </li>
+            </ul>
+            <button class="main-navigation__toggle toggle" data-burger-element aria-pressed="false" type="button">
+              <span class="visually-hidden">Открыть меню</span>
+              <span class="toggle__button" data-burger-button></span>
+            </button>
+          </nav>
+        </div>
         <div class="main-header__description">
           <h1>Круизы в&nbsp;Антарктику</h1>
           <p>Волшебный мир айсбергов и&nbsp;пингвинов</p>
@@ -76,7 +78,7 @@
           </div>
         </div>
       </section>
-      <section class="advantages" style="
+      <section class="advantages" id="advantages" style="
           --advantages-bg-big-url: url(../img/advantages/bg-advantages-big.webp);
           --advantages-bg-medium-url: url(../img/advantages/bg-advantages-medium.webp);
           --advantages-bg-small-url: url(../img/advantages/bg-advantages-small.webp);
@@ -120,7 +122,7 @@
           </dl>
         </div>
       </section>
-      <section>
+      <section id="upcoming-cruises">
         <div class="container">
           <div class="cruises">
             <h2>Ближайшие круизы</h2>
@@ -343,7 +345,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section id="contacts">
         <h2 class="visually-hidden">Контакты</h2>
         <div class="container">
           <div class="contacts">
@@ -415,7 +417,7 @@
       </div>
     </footer>
   </div>
-  <script src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru_RU&amp;apikey=206dc831-42aa-413d-81c1-f9590a1025b6" defer></script>
+  <!-- <script src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru_RU&amp;apikey=206dc831-42aa-413d-81c1-f9590a1025b6" defer></script> -->
   <script src="./js/vendor.min.js" defer></script>
   <script src="./js/main.min.js" defer></script>
 </body>
