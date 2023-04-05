@@ -10,16 +10,16 @@ const iObserver = new IntersectionObserver(function (entries) {
 iObserver.observe(document.getElementById('map'));
 
 function loadMap() {
-  let map = document.getElementById('map');
+  const map = document.getElementById('map');
   if (!map.classList.contains('js--loaded')) {
     map.classList.add('js--loaded');
 
     if (typeof ymaps === 'undefined') {
-      let js = document.createElement('script');
+      const js = document.createElement('script');
       js.src = 'https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru_RU&amp;apikey=206dc831-42aa-413d-81c1-f9590a1025b6';
       document.body.appendChild(js);
       js.onload = function () {
-        ymaps.ready(initMap);
+        window.ymaps.ready(initMap);
       };
     } else {
       ymaps.ready(initMap);

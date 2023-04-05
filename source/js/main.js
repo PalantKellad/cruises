@@ -14,8 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // Modules
   // ---------------------------------
 
-  initMap();
-
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
 });
@@ -26,6 +24,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const burger = new Burger();
     burger.init();
   });
+});
+
+document.addEventListener('load', () => {
+  initMap();
 });
 
 // ---------------------------------
