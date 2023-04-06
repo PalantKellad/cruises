@@ -2,7 +2,15 @@
   display: grid;
   place-content: center;
   color: var(--base-light);
-  filter: var(--filter);
+  filter: var(--logo-color);
+
+  @include hover-focus {
+    filter: var(--logo-color) var(--hover-shadow-light);
+  }
+
+  @include active {
+    filter: var(--icon-active) var(--hover-shadow-light);
+  }
 
   @include vp-1023 {
     max-width: 38px;
@@ -12,6 +20,6 @@
     max-width: 42px;
     padding-top: 5px;
     padding-bottom: 5px;
-    filter: var(--filter);
+    filter: var(--logo-color);
   }
 }

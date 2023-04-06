@@ -11,7 +11,7 @@
 
   @include vp-767 {
     grid-template-columns: 1fr;
-    padding-block: 58px 65px;
+    padding-block: 58px;
   }
 }
 
@@ -52,6 +52,12 @@
 }
 
 .contacts__address {
+  address {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
   p {
     display: flex;
     margin: 0;
@@ -87,8 +93,37 @@
   }
 
   a {
+    --stroke: 0.17em;
+    --color: currentColor;
+
     display: flex;
+    justify-content: start;
+    padding-bottom: calc(2.1 * var(--stroke));
     font: 400 16px / 1.5 $ff-montserrat;
+    background: conic-gradient(
+          from 135deg at top,
+          var(--color) 90deg,
+          transparent 0
+        )
+      left 0 bottom var(--stroke) / calc(2 * var(--stroke)) var(--stroke)
+      repeat-x,
+      conic-gradient(from -45deg at bottom, var(--color) 90deg, transparent 0)
+      left var(--stroke) bottom 0 / calc(2 * var(--stroke)) var(--stroke)
+      repeat-x;
+    mask: linear-gradient(#000000 0 0) content-box,
+      linear-gradient(#000000 0 0) 0 / var(--_position, 0%) padding-box
+      no-repeat;
+    transition: mask 600ms ease-out;
+
+    @include hover-focus {
+      --_position: 100%;
+      color: var(--color);
+    }
+
+    @include active {
+      --color: var(--themed-action);
+      text-shadow: var(--link-action-shadow);
+    }
 
     &::before {
       --icon-url: var(--phone-icon-url);
@@ -100,7 +135,7 @@
       min-width: 20px;
       height: 20px;
       margin-right: 8px;
-      background-color: var(--themed-dark);
+      background-color: var(--color);
       mask: var(--icon-url) no-repeat center top / contain;
     }
   }

@@ -19,8 +19,14 @@
 }
 
 @mixin active {
-  &.focus-visible:active {
-    @content;
+  @media screen {
+    &:active:not(.focus-visible) {
+      @content;
+    }
+
+    &.focus-visible:active {
+      @content;
+    }
   }
 }
 

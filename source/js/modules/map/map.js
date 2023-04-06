@@ -31,6 +31,7 @@ function initMap() {
   const myMap = new ymaps.Map('map', {
     center: [59.938496, 30.323135],
     zoom: 16,
+    controls: [],
   });
 
   const myPlacemark = new ymaps.Placemark(myMap.getCenter(), {

@@ -60,13 +60,17 @@ $retina-dppx:                       1.5dppx;
 :root {
   // Colors
   --themed-dark: #011c40;
+  --themed-action: #6eacd7;
   --themed-light: #e3ecf6;
   --base-light: #f9fbfd;
   --base-neutral: #d8d8d9;
-  --logo-light: invert(92%) sepia(29%) saturate(18%) hue-rotate(161deg) brightness(101%) contrast(99%);
-  --logo-dark: invert(7%) sepia(41%) saturate(4574%) hue-rotate(204deg) brightness(96%) contrast(99%);
+  --icon-light: invert(92%) sepia(29%) saturate(18%) hue-rotate(161deg) brightness(101%) contrast(99%);
+  --icon-dark: invert(7%) sepia(41%) saturate(4574%) hue-rotate(204deg) brightness(96%) contrast(99%);
+  --icon-active: invert(73%) sepia(54%) saturate(349%) hue-rotate(170deg) brightness(99%) contrast(88%);
 
   //Shadows
   --heading-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   --navigation-shadow: drop-shadow(var(--heading-shadow));
+  --hover-shadow-light: drop-shadow(0 0 10px var(--base-light));
+  --link-action-shadow: text-shadow(0 0 4px #000000);
 }

@@ -24,34 +24,86 @@
   }
 
   label {
+    --label-font-size: 0;
+    --label-transform: translateY(1.5em);
+
     position: relative;
     width: 100%;
     align-self: end;
+
+    &:focus-within {
+      --label-font-size: 16px;
+      --label-transform: translateY(-1em);
+    }
   }
 
   input {
+    --border-color: transparent;
+
     width: 100%;
-    padding: 11px 16px;
+    padding: 10px 13px;
     font: 400 14px / 1.5 $ff-montserrat;
     color: var(--themed-dark);
+    border: 3px solid var(--border-color);
+
+    &::placeholder {
+      color: var(--themed-dark);
+    }
+
+    &:hover {
+      --border-color: var(--themed-action);
+    }
+
+    &:focus {
+      --border-color: var(--themed-action);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    &:disabled:hover {
+      border-color: transparent;
+      opacity: 0.5;
+      pointer-events: none;
+    }
   }
 
   span {
     position: absolute;
     display: block;
-    font-size: 0;
-    transform: translateY(1.5em);
+    font-size: var(--label-font-size);
+    background-color: var(--themed-dark);
+    transform: var(--label-transform);
+    transition: transform 300ms ease-out;
   }
 
   button {
+    --border-color: transparent;
+
     display: block;
-    padding: 11px;
+    padding: 8px;
     font: 600 14px / 1.5 $ff-montserrat;
     text-align: center;
     color: var(--themed-dark);
     background-color: var(--base-light);
-    border: none;
+    border: 3px solid var(--border-color);
     user-select: none;
+    cursor: pointer;
+
+    @include hover-focus {
+      --border-color: var(--themed-action);
+    }
+
+    @include active {
+      color: var(--themed-action);
+    }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
   }
 }
 
@@ -83,6 +135,7 @@
     padding: 0;
     color: var(--themed-dark);
     background-color: var(--base-light);
+    border-width: 1px;
     cursor: pointer;
 
     @include vp-767 {
@@ -104,6 +157,11 @@
 
     &:checked {
       --scale: scale(1);
+    }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: 0.5;
     }
   }
 

@@ -18,7 +18,14 @@
     --content-transform: translateY(80.6%);
   }
 
-  @include hover-focus {
+  @include hover {
+    --content-transform: translateY(0%);
+    --content-opacity: 1;
+    --heading-inline-padding: 0;
+    --content-bg-color: var(--themed-dark);
+  }
+
+  &:focus-within {
     --content-transform: translateY(0%);
     --content-opacity: 1;
     --heading-inline-padding: 0;
@@ -98,14 +105,30 @@
 }
 
 .card__link {
+  --border-color: transparent;
+
   flex-shrink: 0;
   display: block;
   margin-top: auto;
-  padding: 10px;
+  padding: 7px;
   text-decoration: none;
   text-align: center;
   font: 600 14px / 1.5 $ff-montserrat;
   color: var(--themed-dark);
   background-color: var(--base-light);
+  border: 3px solid var(--border-color);
   user-select: none;
+
+  @include hover-focus {
+    --border-color: var(--themed-action);
+  }
+
+  @include active {
+    color: var(--themed-action);
+  }
+
+  &--disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
 }

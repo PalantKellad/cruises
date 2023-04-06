@@ -18,9 +18,18 @@
   width: var(--icon-size);
   height: var(--icon-size);
   padding: 5px;
+  filter: var(--icon-light);
 
   @include vp-1023 {
     --icon-size: 26px;
+  }
+
+  @include hover-focus {
+    filter: var(--icon-light) var(--hover-shadow-light);
+  }
+
+  @include active {
+    filter: var(--icon-active) var(--hover-shadow-light);
   }
 }
 

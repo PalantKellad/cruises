@@ -1,5 +1,5 @@
 .main-navigation {
-  --filter: var(--logo-light);
+  --logo-color: var(--icon-light);
   --mobile-menu-display: none;
   --menu-pointer-events: none;
   --visibility: hidden;
@@ -16,7 +16,7 @@
 
   &--is-open {
     @include vp-767 {
-      --filter: var(--logo-dark);
+      --logo-color: var(--logo-dark);
       --mobile-menu-display: flex;
       --menu-pointer-events: auto;
       --visibility: visible;
@@ -34,6 +34,7 @@
       height: 100%;
       padding-top: 15px;
       padding-left: 15px;
+      overflow-x: hidden;
       overflow-y: auto;
       background-color: var(--base-light);
 

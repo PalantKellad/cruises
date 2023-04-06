@@ -386,13 +386,17 @@ template {
 
 :root {
   --themed-dark: #011c40;
+  --themed-action: #6eacd7;
   --themed-light: #e3ecf6;
   --base-light: #f9fbfd;
   --base-neutral: #d8d8d9;
-  --logo-light: invert(92%) sepia(29%) saturate(18%) hue-rotate(161deg) brightness(101%) contrast(99%);
-  --logo-dark: invert(7%) sepia(41%) saturate(4574%) hue-rotate(204deg) brightness(96%) contrast(99%);
+  --icon-light: invert(92%) sepia(29%) saturate(18%) hue-rotate(161deg) brightness(101%) contrast(99%);
+  --icon-dark: invert(7%) sepia(41%) saturate(4574%) hue-rotate(204deg) brightness(96%) contrast(99%);
+  --icon-active: invert(73%) sepia(54%) saturate(349%) hue-rotate(170deg) brightness(99%) contrast(88%);
   --heading-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   --navigation-shadow: drop-shadow(var(--heading-shadow));
+  --hover-shadow-light: drop-shadow(0 0 10px var(--base-light));
+  --link-action-shadow: text-shadow(0 0 4px #000000);
 }
 
 @font-face {
@@ -814,7 +818,7 @@ button,
 }
 
 .main-navigation {
-  --filter: var(--logo-light);
+  --logo-color: var(--icon-light);
   --mobile-menu-display: none;
   --menu-pointer-events: none;
   --visibility: hidden;
@@ -851,8 +855,13 @@ button,
   display: grid;
   place-content: center;
   color: var(--base-light);
-  -webkit-filter: var(--filter);
-  filter: var(--filter);
+  -webkit-filter: var(--logo-color);
+  filter: var(--logo-color);
+}
+
+.logo.focus-visible:focus {
+  -webkit-filter: var(--logo-color) var(--hover-shadow-light);
+  filter: var(--logo-color) var(--hover-shadow-light);
 }
 
 .main-menu {
@@ -881,22 +890,24 @@ button,
   -webkit-mask: linear-gradient(#000000 0 0) content-box, linear-gradient(#000000 0 0) 0/var(--_position, 0%) padding-box no-repeat;
   mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000000)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #000000)) 0/var(--_position, 0%) padding-box no-repeat;
   mask: linear-gradient(#000000 0 0) content-box, linear-gradient(#000000 0 0) 0/var(--_position, 0%) padding-box no-repeat;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: -webkit-mask 600ms ease-out;
+  transition: -webkit-mask 600ms ease-out;
+  -o-transition: mask 600ms ease-out;
+  transition: mask 600ms ease-out;
+  transition: mask 600ms ease-out, -webkit-mask 600ms ease-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-.main-menu__link:hover {
+.main-menu__link.focus-visible:focus {
   --_position: 100%;
   color: var(--color);
 }
 
 .main-footer {
-  --filter: var(--logo-light);
+  --logo-color: var(--icon-light);
   background-color: var(--themed-dark);
   padding-block: 50px;
 }
@@ -948,6 +959,13 @@ button,
   width: var(--icon-size);
   height: var(--icon-size);
   padding: 5px;
+  -webkit-filter: var(--icon-light);
+  filter: var(--icon-light);
+}
+
+.social__link.focus-visible:focus {
+  -webkit-filter: var(--icon-light) var(--hover-shadow-light);
+  filter: var(--icon-light) var(--hover-shadow-light);
 }
 
 .social__img {
@@ -1188,7 +1206,7 @@ button,
   transition: 300ms ease-out;
 }
 
-.card.focus-visible:focus {
+.card:focus-within {
   --content-transform: translateY(0%);
   --content-opacity: 1;
   --heading-inline-padding: 0;
@@ -1272,20 +1290,31 @@ button,
 }
 
 .card__link {
+  --border-color: transparent;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   display: block;
   margin-top: auto;
-  padding: 10px;
+  padding: 7px;
   text-decoration: none;
   text-align: center;
   font: 600 14px/1.5 "Montserrat", "Arial", sans-serif;
   color: var(--themed-dark);
   background-color: var(--base-light);
+  border: 3px solid var(--border-color);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.card__link.focus-visible:focus {
+  --border-color: var(--themed-action);
+}
+
+.card__link--disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 .booking {
@@ -1350,6 +1379,8 @@ button,
 }
 
 .form-wrapper label {
+  --label-font-size: 0;
+  --label-transform: translateY(1.5em);
   position: relative;
   width: 100%;
   -ms-flex-item-align: end;
@@ -1357,34 +1388,97 @@ button,
   align-self: end;
 }
 
+.form-wrapper label:focus-within {
+  --label-font-size: 16px;
+  --label-transform: translateY(-1em);
+}
+
 .form-wrapper input {
+  --border-color: transparent;
   width: 100%;
-  padding: 11px 16px;
+  padding: 10px 13px;
   font: 400 14px/1.5 "Montserrat", "Arial", sans-serif;
   color: var(--themed-dark);
+  border: 3px solid var(--border-color);
+}
+
+.form-wrapper input::-webkit-input-placeholder {
+  color: var(--themed-dark);
+}
+
+.form-wrapper input::-moz-placeholder {
+  color: var(--themed-dark);
+}
+
+.form-wrapper input:-ms-input-placeholder {
+  color: var(--themed-dark);
+}
+
+.form-wrapper input::-ms-input-placeholder {
+  color: var(--themed-dark);
+}
+
+.form-wrapper input::placeholder {
+  color: var(--themed-dark);
+}
+
+.form-wrapper input:hover {
+  --border-color: var(--themed-action);
+}
+
+.form-wrapper input:focus {
+  --border-color: var(--themed-action);
+}
+
+.form-wrapper input:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.form-wrapper input:disabled:hover {
+  border-color: transparent;
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .form-wrapper span {
   position: absolute;
   display: block;
-  font-size: 0;
-  -webkit-transform: translateY(1.5em);
-  -ms-transform: translateY(1.5em);
-  transform: translateY(1.5em);
+  font-size: var(--label-font-size);
+  background-color: var(--themed-dark);
+  -webkit-transform: var(--label-transform);
+  -ms-transform: var(--label-transform);
+  transform: var(--label-transform);
+  -webkit-transition: -webkit-transform 300ms ease-out;
+  transition: -webkit-transform 300ms ease-out;
+  -o-transition: transform 300ms ease-out;
+  transition: transform 300ms ease-out;
+  transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
 }
 
 .form-wrapper button {
+  --border-color: transparent;
   display: block;
-  padding: 11px;
+  padding: 8px;
   font: 600 14px/1.5 "Montserrat", "Arial", sans-serif;
   text-align: center;
   color: var(--themed-dark);
   background-color: var(--base-light);
-  border: none;
+  border: 3px solid var(--border-color);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: pointer;
+}
+
+.form-wrapper button.focus-visible:focus {
+  --border-color: var(--themed-action);
+}
+
+.form-wrapper button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 .form-wrapper__personal-data-check {
@@ -1417,6 +1511,7 @@ button,
   padding: 0;
   color: var(--themed-dark);
   background-color: var(--base-light);
+  border-width: 1px;
   cursor: pointer;
 }
 
@@ -1437,6 +1532,11 @@ button,
 
 .form-wrapper__personal-data-check input[type=checkbox]:checked {
   --scale: scale(1);
+}
+
+.form-wrapper__personal-data-check input[type=checkbox]:disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 .form-wrapper__personal-data-check span {
@@ -1475,6 +1575,19 @@ button,
   margin-bottom: 0;
 }
 
+.contacts__address address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+}
+
 .contacts__address p {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1504,10 +1617,31 @@ button,
 }
 
 .contacts__address a {
+  --stroke: 0.17em;
+  --color: currentColor;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  padding-bottom: calc(2.1 * var(--stroke));
   font: 400 16px/1.5 "Montserrat", "Arial", sans-serif;
+  background: conic-gradient(from 135deg at top, var(--color) 90deg, transparent 0) left 0 bottom var(--stroke)/calc(2 * var(--stroke)) var(--stroke) repeat-x, conic-gradient(from -45deg at bottom, var(--color) 90deg, transparent 0) left var(--stroke) bottom 0/calc(2 * var(--stroke)) var(--stroke) repeat-x;
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000000)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #000000)) 0/var(--_position, 0%) padding-box no-repeat;
+  -webkit-mask: linear-gradient(#000000 0 0) content-box, linear-gradient(#000000 0 0) 0/var(--_position, 0%) padding-box no-repeat;
+  mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000000)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #000000)) 0/var(--_position, 0%) padding-box no-repeat;
+  mask: linear-gradient(#000000 0 0) content-box, linear-gradient(#000000 0 0) 0/var(--_position, 0%) padding-box no-repeat;
+  -webkit-transition: -webkit-mask 600ms ease-out;
+  transition: -webkit-mask 600ms ease-out;
+  -o-transition: mask 600ms ease-out;
+  transition: mask 600ms ease-out;
+  transition: mask 600ms ease-out, -webkit-mask 600ms ease-out;
+}
+
+.contacts__address a.focus-visible:focus {
+  --_position: 100%;
+  color: var(--color);
 }
 
 .contacts__address a::before {
@@ -1520,7 +1654,7 @@ button,
   min-width: 20px;
   height: 20px;
   margin-right: 8px;
-  background-color: var(--themed-dark);
+  background-color: var(--color);
   -webkit-mask: var(--icon-url) no-repeat center top/contain;
   mask: var(--icon-url) no-repeat center top/contain;
 }
@@ -1826,7 +1960,7 @@ button,
   }
 
   .main-navigation--is-open {
-    --filter: var(--logo-dark);
+    --logo-color: var(--logo-dark);
     --mobile-menu-display: flex;
     --menu-pointer-events: auto;
     --visibility: visible;
@@ -1849,6 +1983,7 @@ button,
     height: 100%;
     padding-top: 15px;
     padding-left: 15px;
+    overflow-x: hidden;
     overflow-y: auto;
     background-color: var(--base-light);
   }
@@ -1879,8 +2014,8 @@ button,
     max-width: 42px;
     padding-top: 5px;
     padding-bottom: 5px;
-    -webkit-filter: var(--filter);
-    filter: var(--filter);
+    -webkit-filter: var(--logo-color);
+    filter: var(--logo-color);
   }
 
   .main-menu {
@@ -1921,6 +2056,7 @@ button,
 
   .main-menu__link {
     display: block;
+    max-width: 20ch;
     padding-top: 10px;
     padding-bottom: 10px;
     font: 500 18px/22px "Montserrat", "Arial", sans-serif;
@@ -2086,7 +2222,7 @@ button,
   .contacts {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-    padding-block: 58px 65px;
+    padding-block: 58px;
   }
 
   .contacts__map {
@@ -2107,10 +2243,96 @@ button,
 }
 
 @media (hover: hover) {
+  .logo:hover:not(.focus-visible) {
+    -webkit-filter: var(--logo-color) var(--hover-shadow-light);
+    filter: var(--logo-color) var(--hover-shadow-light);
+  }
+
+  .main-menu__link:hover:not(.focus-visible) {
+    --_position: 100%;
+    color: var(--color);
+  }
+
+  .social__link:hover:not(.focus-visible) {
+    -webkit-filter: var(--icon-light) var(--hover-shadow-light);
+    filter: var(--icon-light) var(--hover-shadow-light);
+  }
+
   .card:hover:not(.focus-visible) {
     --content-transform: translateY(0%);
     --content-opacity: 1;
     --heading-inline-padding: 0;
     --content-bg-color: var(--themed-dark);
+  }
+
+  .card__link:hover:not(.focus-visible) {
+    --border-color: var(--themed-action);
+  }
+
+  .form-wrapper button:hover:not(.focus-visible) {
+    --border-color: var(--themed-action);
+  }
+
+  .contacts__address a:hover:not(.focus-visible) {
+    --_position: 100%;
+    color: var(--color);
+  }
+}
+
+@media screen {
+  .logo:active:not(.focus-visible) {
+    -webkit-filter: var(--icon-active) var(--hover-shadow-light);
+    filter: var(--icon-active) var(--hover-shadow-light);
+  }
+
+  .logo.focus-visible:active {
+    -webkit-filter: var(--icon-active) var(--hover-shadow-light);
+    filter: var(--icon-active) var(--hover-shadow-light);
+  }
+
+  .main-menu__link:active:not(.focus-visible) {
+    --color: var(--themed-action);
+    text-shadow: var(--link-action-shadow);
+  }
+
+  .main-menu__link.focus-visible:active {
+    --color: var(--themed-action);
+    text-shadow: var(--link-action-shadow);
+  }
+
+  .social__link:active:not(.focus-visible) {
+    -webkit-filter: var(--icon-active) var(--hover-shadow-light);
+    filter: var(--icon-active) var(--hover-shadow-light);
+  }
+
+  .social__link.focus-visible:active {
+    -webkit-filter: var(--icon-active) var(--hover-shadow-light);
+    filter: var(--icon-active) var(--hover-shadow-light);
+  }
+
+  .card__link:active:not(.focus-visible) {
+    color: var(--themed-action);
+  }
+
+  .card__link.focus-visible:active {
+    color: var(--themed-action);
+  }
+
+  .form-wrapper button:active:not(.focus-visible) {
+    color: var(--themed-action);
+  }
+
+  .form-wrapper button.focus-visible:active {
+    color: var(--themed-action);
+  }
+
+  .contacts__address a:active:not(.focus-visible) {
+    --color: var(--themed-action);
+    text-shadow: var(--link-action-shadow);
+  }
+
+  .contacts__address a.focus-visible:active {
+    --color: var(--themed-action);
+    text-shadow: var(--link-action-shadow);
   }
 }

@@ -57,12 +57,17 @@
     repeat-x;
   mask: linear-gradient(#000000 0 0) content-box,
     linear-gradient(#000000 0 0) 0 / var(--_position, 0%) padding-box no-repeat;
-  transition: 0.5s;
+  transition: mask 600ms ease-out;
   user-select: none;
 
-  &:hover {
+  @include hover-focus {
     --_position: 100%;
     color: var(--color);
+  }
+
+  @include active {
+    --color: var(--themed-action);
+    text-shadow: var(--link-action-shadow);
   }
 
   @include vp-1023 {
@@ -71,6 +76,7 @@
 
   @include vp-767 {
     display: block;
+    max-width: 20ch;
     padding-top: 10px;
     padding-bottom: 10px;
     font: 500 18px / 22px $ff-montserrat;
