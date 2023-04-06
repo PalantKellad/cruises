@@ -18,7 +18,7 @@
     --content-transform: translateY(80.6%);
   }
 
-  @include hover {
+  @include hover-focus {
     --content-transform: translateY(0%);
     --content-opacity: 1;
     --heading-inline-padding: 0;

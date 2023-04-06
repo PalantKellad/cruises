@@ -1206,6 +1206,13 @@ button,
   transition: 300ms ease-out;
 }
 
+.card.focus-visible:focus {
+  --content-transform: translateY(0%);
+  --content-opacity: 1;
+  --heading-inline-padding: 0;
+  --content-bg-color: var(--themed-dark);
+}
+
 .card:focus-within {
   --content-transform: translateY(0%);
   --content-opacity: 1;
