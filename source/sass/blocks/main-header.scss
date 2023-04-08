@@ -6,8 +6,18 @@
   background: var(--bg-url) no-repeat var(--themed-dark) center / cover;
   filter: var(--heading-shadow);
 
+  @media (min-width: 1024px) {
+    @media (min-resolution: 2dppx) {
+      --bg-url: var(--header-retina-bg-big-url);
+    }
+  }
+
   @include vp-1023 {
     --bg-url: var(--header-bg-medium-url);
+
+    @media (min-resolution: 2dppx) {
+      --bg-url: var(--header-retina-bg-medium-url);
+    }
 
     min-height: 638px;
     filter: initial;
@@ -15,6 +25,10 @@
 
   @include vp-767 {
     --bg-url: var(--header-bg-small-url);
+
+    @media (min-resolution: 2dppx) {
+      --bg-url: var(--header-retina-bg-small-url);
+    }
 
     min-height: 500px;
   }

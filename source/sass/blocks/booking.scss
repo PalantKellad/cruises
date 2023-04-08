@@ -5,12 +5,30 @@
   padding-bottom: 50px;
   background: var(--bg-url) no-repeat var(--themed-light) center / cover;
 
+  @media (min-width: 1024px) {
+    @media (min-resolution: 2dppx) {
+      --bg-url: var(--booking-retina-bg-big-url);
+    }
+  }
+
   @include vp-1023 {
+    --bg-url: var(--booking-bg-medium-url);
+
     padding-bottom: 100px;
+
+    @media (min-resolution: 2dppx) {
+      --bg-url: var(--booking-retina-bg-medium-url);
+    }
   }
 
   @include vp-767 {
+    --bg-url: var(--booking-bg-small-url);
+
     padding-bottom: 65px;
+
+    @media (min-resolution: 2dppx) {
+      --bg-url: var(--booking-retina-bg-small-url);
+    }
   }
 }
 

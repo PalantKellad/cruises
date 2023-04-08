@@ -5,14 +5,32 @@
   padding-top: 110px;
   padding-bottom: 120px;
 
+  @media (min-width: 1024px) {
+    @media (min-resolution: 2dppx) {
+      --bg-url: var(--advantages-retina-bg-big-url);
+    }
+  }
+
   @include vp-1023 {
+    --bg-url: var(--advantages-bg-medium-url);
+
     padding-top: 90px;
     padding-bottom: 100px;
+
+    @media (min-resolution: 2dppx) {
+      --bg-url: var(--advantages-retina-bg-medium-url);
+    }
   }
 
   @include vp-767 {
+    --bg-url: var(--advantages-bg-small-url);
+
     padding-top: 57px;
     padding-bottom: 65px;
+
+    @media (min-resolution: 2dppx) {
+      --bg-url: var(--advantages-retina-bg-small-url);
+    }
   }
 
   &::after {

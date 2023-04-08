@@ -1194,12 +1194,13 @@ button,
   --content-opacity: 0;
   --heading-inline-padding: 4px;
   --content-bg-color: transparent;
+  --overflow-y: hidden;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: minmax(1fr, 260px);
   grid-template-columns: minmax(1fr, 260px);
-  -ms-grid-rows: minmax(386px, 1fr);
-  grid-template-rows: minmax(386px, 1fr);
+  -ms-grid-rows: minmax(0, 386px);
+  grid-template-rows: minmax(0, 386px);
   overflow: hidden;
   -webkit-transition: 300ms ease-out;
   -o-transition: 300ms ease-out;
@@ -1211,6 +1212,7 @@ button,
   --content-opacity: 1;
   --heading-inline-padding: 0;
   --content-bg-color: var(--themed-dark);
+  --overflow-y: auto;
 }
 
 .card:focus-within {
@@ -1253,6 +1255,7 @@ button,
   min-width: 0;
   padding: 30px 25px 35px;
   background-color: var(--content-bg-color);
+  overflow-y: var(--overflow-y);
   -webkit-transform: var(--content-transform);
   -ms-transform: var(--content-transform);
   transform: var(--content-transform);
@@ -1275,6 +1278,7 @@ button,
   -ms-flex-negative: 0;
   flex-shrink: 0;
   margin: 0;
+  margin-bottom: 5px;
   opacity: var(--content-opacity);
 }
 
@@ -1676,6 +1680,20 @@ button,
   height: auto;
 }
 
+@media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 1024px) and (min-resolution: 2dppx) {
+  .main-header {
+    --bg-url: var(--header-retina-bg-big-url);
+  }
+
+  .advantages {
+    --bg-url: var(--advantages-retina-bg-big-url);
+  }
+
+  .booking {
+    --bg-url: var(--booking-retina-bg-big-url);
+  }
+}
+
 @media (max-width: 1023px) {
   .container {
     padding: 0 45px;
@@ -1767,6 +1785,7 @@ button,
   }
 
   .advantages {
+    --bg-url: var(--advantages-bg-medium-url);
     padding-top: 90px;
     padding-bottom: 100px;
   }
@@ -1812,6 +1831,7 @@ button,
   }
 
   .booking {
+    --bg-url: var(--booking-bg-medium-url);
     padding-bottom: 100px;
   }
 
@@ -1873,6 +1893,20 @@ button,
 
   .map {
     min-height: 335px;
+  }
+}
+
+@media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1023px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 1023px) and (min-resolution: 2dppx) {
+  .main-header {
+    --bg-url: var(--header-retina-bg-medium-url);
+  }
+
+  .advantages {
+    --bg-url: var(--advantages-retina-bg-medium-url);
+  }
+
+  .booking {
+    --bg-url: var(--booking-retina-bg-medium-url);
   }
 }
 
@@ -2088,6 +2122,7 @@ button,
   }
 
   .advantages {
+    --bg-url: var(--advantages-bg-small-url);
     padding-top: 57px;
     padding-bottom: 65px;
   }
@@ -2140,6 +2175,7 @@ button,
   }
 
   .booking {
+    --bg-url: var(--booking-bg-small-url);
     padding-bottom: 65px;
   }
 
@@ -2208,6 +2244,20 @@ button,
   }
 }
 
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 767px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 767px) and (min-resolution: 2dppx) {
+  .main-header {
+    --bg-url: var(--header-retina-bg-small-url);
+  }
+
+  .advantages {
+    --bg-url: var(--advantages-retina-bg-small-url);
+  }
+
+  .booking {
+    --bg-url: var(--booking-retina-bg-small-url);
+  }
+}
+
 @media (hover: hover) {
   .logo:hover:not(.focus-visible) {
     -webkit-filter: var(--logo-color) var(--hover-shadow-light);
@@ -2229,6 +2279,7 @@ button,
     --content-opacity: 1;
     --heading-inline-padding: 0;
     --content-bg-color: var(--themed-dark);
+    --overflow-y: auto;
   }
 
   .card__link:hover:not(.focus-visible) {
