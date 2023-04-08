@@ -7,11 +7,14 @@ const iObserver = new IntersectionObserver(function (entries) {
   threshold: [0],
 });
 
-iObserver.observe(document.getElementById('map'));
+const map = document.getElementById('map');
+
+if (map) {
+  iObserver.observe(document.getElementById('map'));
+}
 
 function loadMap() {
-  const map = document.getElementById('map');
-  if (!map.classList.contains('js--loaded')) {
+  if (map && !map.classList.contains('js--loaded')) {
     map.classList.add('js--loaded');
 
     if (typeof ymaps === 'undefined') {
