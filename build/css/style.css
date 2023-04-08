@@ -1201,6 +1201,7 @@ button,
   grid-template-columns: minmax(1fr, 260px);
   -ms-grid-rows: minmax(0, 386px);
   grid-template-rows: minmax(0, 386px);
+  background-color: var(--themed-dark);
   overflow: hidden;
   -webkit-transition: 300ms ease-out;
   -o-transition: 300ms ease-out;

@@ -8,6 +8,7 @@
   display: grid;
   grid-template-columns: minmax(1fr, 260px);
   grid-template-rows: minmax(0, 386px);
+  background-color: var(--themed-dark);
   overflow: hidden;
   transition: 300ms ease-out;
 
