@@ -39,6 +39,13 @@
   }
 }
 
+.main-menu__item {
+  @include vp-767 {
+    position: relative;
+    width: 100%;
+  }
+}
+
 .main-menu__link {
   --stroke: 0.17em;
 
@@ -77,9 +84,18 @@
   @include vp-767 {
     display: block;
     max-width: 20ch;
+    width: fit-content;
     padding-top: 10px;
     padding-bottom: 10px;
     font: 500 18px / 22px $ff-montserrat;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &--footer {

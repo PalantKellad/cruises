@@ -33,17 +33,26 @@
     }
   }
 
-  &::after {
+  &::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: -1;
     width: 100%;
     height: 100%;
+    background-color: var(--themed-light);
+    opacity: 0.9;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
     background: var(--bg-url) no-repeat center / cover;
     background-color: var(--themed-light);
-    background-blend-mode: overlay;
-    opacity: 0.9;
   }
 
   h2 {
@@ -132,12 +141,16 @@
     font: 500 18px / 1.5 $ff-montserrat;
 
     @include vp-767 {
-      max-width: 16ch;
+      padding-right: 55px;
     }
   }
 
   dd {
     margin: 0;
     font: 400 14px / 1.4 $ff-montserrat;
+  }
+
+  dd:not(:last-child) {
+    margin-bottom: 10px;
   }
 }

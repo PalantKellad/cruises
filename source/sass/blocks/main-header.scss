@@ -3,7 +3,8 @@
 
   min-height: 650px;
   color: var(--base-light);
-  background: var(--bg-url) no-repeat var(--themed-dark) center / cover;
+  background: var(--bg-url) no-repeat center bottom / cover;
+  background-color: var(--themed-dark);
   filter: var(--heading-shadow);
 
   @media (min-width: 1024px) {

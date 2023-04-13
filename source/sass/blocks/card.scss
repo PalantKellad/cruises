@@ -8,16 +8,19 @@
   display: grid;
   grid-template-columns: minmax(1fr, 260px);
   grid-template-rows: minmax(0, 386px);
+  aspect-ratio: 260 / 386;
   background-color: var(--themed-dark);
   overflow: hidden;
   transition: 300ms ease-out;
 
   @include vp-1023 {
     --content-transform: translateY(78.6%);
+    aspect-ratio: 309 / 386;
   }
 
   @include vp-767 {
     --content-transform: translateY(80.6%);
+    aspect-ratio: 270 / 386;
   }
 
   @include hover-focus {
@@ -39,6 +42,7 @@
 .card__image {
   grid-column: 1 / 1;
   grid-row: 1 / 1;
+  aspect-ratio: 260 / 386;
 
   img {
     object-fit: cover;
@@ -46,6 +50,14 @@
     width: 100%;
     height: 100%;
   }
+
+    @include vp-1023 {
+      aspect-ratio: 309 / 386;
+    }
+
+    @include vp-767 {
+      aspect-ratio: 270 / 386;
+    }
 }
 
 .card__content {
@@ -57,6 +69,7 @@
   width: 100%;
   min-width: 0;
   padding: 30px 25px 35px;
+  aspect-ratio: 260 / 386;
   background-color: var(--content-bg-color);
   overflow-y: var(--overflow-y);
   transform: var(--content-transform);
@@ -64,10 +77,12 @@
 
   @include vp-1023 {
     padding-inline: 35px;
+    aspect-ratio: 309 / 386;
   }
 
   @include vp-767 {
     padding-inline: 25px;
+    aspect-ratio: 270 / 386;
   }
 
   h3 {

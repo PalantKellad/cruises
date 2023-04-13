@@ -38,6 +38,8 @@
   padding-inline: 15px;
 
   @include vp-767 {
+    grid-template-columns: minmax(260px, 1fr);
+    grid-auto-rows: minmax(386px, 1fr);
     padding-inline: 10px;
   }
 }

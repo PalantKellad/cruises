@@ -173,7 +173,7 @@
     transform: initial;
 
     @include vp-767 {
-      max-width: 23ch;
+      padding-right: 47px;
     }
   }
 }

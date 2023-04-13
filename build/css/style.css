@@ -790,7 +790,8 @@ button,
   --bg-url: var(--header-bg-big-url);
   min-height: 650px;
   color: var(--base-light);
-  background: var(--bg-url) no-repeat var(--themed-dark) center/cover;
+  background: var(--bg-url) no-repeat center bottom/cover;
+  background-color: var(--themed-dark);
   -webkit-filter: var(--heading-shadow);
   filter: var(--heading-shadow);
 }
@@ -1091,17 +1092,26 @@ button,
   padding-bottom: 120px;
 }
 
-.advantages::after {
+.advantages::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   width: 100%;
   height: 100%;
+  background-color: var(--themed-light);
+  opacity: 0.9;
+}
+
+.advantages::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
   background: var(--bg-url) no-repeat center/cover;
   background-color: var(--themed-light);
-  background-blend-mode: overlay;
-  opacity: 0.9;
 }
 
 .advantages h2 {
@@ -1165,6 +1175,10 @@ button,
   font: 400 14px/1.4 "Montserrat", "Arial", sans-serif;
 }
 
+.advantages__item dd:not(:last-child) {
+  margin-bottom: 10px;
+}
+
 .cruises {
   padding-top: 64px;
   padding-bottom: 120px;
@@ -1201,6 +1215,7 @@ button,
   grid-template-columns: minmax(1fr, 260px);
   -ms-grid-rows: minmax(0, 386px);
   grid-template-rows: minmax(0, 386px);
+  aspect-ratio: 260/386;
   background-color: var(--themed-dark);
   overflow: hidden;
   -webkit-transition: 300ms ease-out;
@@ -1228,6 +1243,7 @@ button,
   grid-column: 1/1;
   -ms-grid-row: 1;
   grid-row: 1/1;
+  aspect-ratio: 260/386;
 }
 
 .card__image img {
@@ -1255,6 +1271,7 @@ button,
   width: 100%;
   min-width: 0;
   padding: 30px 25px 35px;
+  aspect-ratio: 260/386;
   background-color: var(--content-bg-color);
   overflow-y: var(--overflow-y);
   -webkit-transform: var(--content-transform);
@@ -1639,6 +1656,7 @@ button,
   justify-content: start;
   padding-bottom: calc(2.1 * var(--stroke));
   font: 400 16px/1.5 "Montserrat", "Arial", sans-serif;
+  color: var(--themed-dark);
   background: conic-gradient(from 135deg at top, var(--color) 90deg, transparent 0) left 0 bottom var(--stroke)/calc(2 * var(--stroke)) var(--stroke) repeat-x, conic-gradient(from -45deg at bottom, var(--color) 90deg, transparent 0) left var(--stroke) bottom 0/calc(2 * var(--stroke)) var(--stroke) repeat-x;
   -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000000)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #000000)) 0/var(--_position, 0%) padding-box no-repeat;
   -webkit-mask: linear-gradient(#000000 0 0) content-box, linear-gradient(#000000 0 0) 0/var(--_position, 0%) padding-box no-repeat;
@@ -1777,7 +1795,7 @@ button,
 
   .about__description h2 {
     margin-bottom: 16px;
-    padding-right: 24px;
+    padding-right: 25px;
     font: 600 26px/1.4 "Montserrat", "Arial", sans-serif;
   }
 
@@ -1821,10 +1839,16 @@ button,
 
   .card {
     --content-transform: translateY(78.6%);
+    aspect-ratio: 309/386;
+  }
+
+  .card__image {
+    aspect-ratio: 309/386;
   }
 
   .card__content {
     padding-inline: 35px;
+    aspect-ratio: 309/386;
   }
 
   .card__content h3 {
@@ -2055,12 +2079,28 @@ button,
     padding-left: 0;
   }
 
+  .main-menu__item {
+    position: relative;
+    width: 100%;
+  }
+
   .main-menu__link {
     display: block;
     max-width: 20ch;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     padding-top: 10px;
     padding-bottom: 10px;
     font: 500 18px/22px "Montserrat", "Arial", sans-serif;
+  }
+
+  .main-menu__link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .main-menu__link--footer {
@@ -2150,7 +2190,7 @@ button,
   }
 
   .advantages__item dt {
-    max-width: 16ch;
+    padding-right: 55px;
   }
 
   .cruises {
@@ -2164,15 +2204,24 @@ button,
   }
 
   .cruises__cards {
+    -ms-grid-columns: minmax(260px, 1fr);
+    grid-template-columns: minmax(260px, 1fr);
+    grid-auto-rows: minmax(386px, 1fr);
     padding-inline: 10px;
   }
 
   .card {
     --content-transform: translateY(80.6%);
+    aspect-ratio: 270/386;
+  }
+
+  .card__image {
+    aspect-ratio: 270/386;
   }
 
   .card__content {
     padding-inline: 25px;
+    aspect-ratio: 270/386;
   }
 
   .booking {
@@ -2219,7 +2268,7 @@ button,
   }
 
   .form-wrapper__personal-data-check span {
-    max-width: 23ch;
+    padding-right: 47px;
   }
 
   .contacts {
