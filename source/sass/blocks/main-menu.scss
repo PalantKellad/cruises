@@ -78,6 +78,8 @@
   }
 
   @include vp-1023 {
+    --stroke: 0.16em;
+
     font: 500 14px / 17px $ff-montserrat;
   }
 

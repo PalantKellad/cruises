@@ -48,6 +48,10 @@ function initMap() {
   });
 
   myMap.geoObjects.add(myPlacemark);
+
+  window.addEventListener('resize', function () {
+    myMap.container.fitToViewport();
+  });
 }
 
 export {initMap};
