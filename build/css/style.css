@@ -2002,7 +2002,7 @@ button,
     inset: 0;
     width: 100%;
     height: 100%;
-    background-color: transparent;
+    background-color: rgba(0, 43, 102, 0.5019607843);
   }
 
   .main-navigation__wrapper--is-open {
